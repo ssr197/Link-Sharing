@@ -126,22 +126,22 @@ dataSource {
     jmxExport = true
     driverClassName = 'oracle.jdbc.OracleDriver'
     dialect = "org.hibernate.dialect.Oracle10gDialect"
+    properties = oracleProperties
 
 }
 
 environments {
     development {
         dataSource {
-            dbCreate = 'update'
+            dbCreate = 'create-drop'
             url = 'jdbc:oracle:thin:@127.0.0.1:1521/orcl'
-            username = 'linksharing'
-            password = 'linksharing'
-            properties = oracleProperties
+            username = 'LinkSharing'
+            password = '785666'
         }
     }
     test {
         dataSource {
-            dbCreate = 'update'
+            dbCreate = 'create-drop'
             url = 'jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
         }
     }
