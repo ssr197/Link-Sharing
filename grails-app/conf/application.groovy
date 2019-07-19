@@ -126,7 +126,6 @@ dataSource {
     jmxExport = true
     driverClassName = 'oracle.jdbc.OracleDriver'
     dialect = "org.hibernate.dialect.Oracle10gDialect"
-    properties = oracleProperties
 
 }
 
@@ -135,8 +134,9 @@ environments {
         dataSource {
             dbCreate = 'update'
             url = 'jdbc:oracle:thin:@127.0.0.1:1521/orcl'
-            username = 'LinkSharing'
-            password = '785666'
+            username = 'linksharing'
+            password = 'linksharing'
+            properties = oracleProperties
         }
     }
     test {

@@ -1,18 +1,15 @@
 package linksharing
 
 class Topic {
-String name
-    User1 createdBy
+    String name
+    Users createdBy
     Date dateCreated
     Date lastUpdated
     Visibility visibility
-
-    static belongsTo = [createdBy:User1]
-    static hasMany = [resource:Resource1, subscribedTo:Subscription]
-
+    static belongsTo = [createdBy:Users]
+    static hasMany = [resourcesHas:Resources, subscriptionsTo:Subscription]
 
     static constraints = {
 
     }
-
 }

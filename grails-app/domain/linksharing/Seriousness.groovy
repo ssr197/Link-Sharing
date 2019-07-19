@@ -1,8 +1,10 @@
 package linksharing
 
-public enum Seriousness {
+
+public enum Seriousness{
     CASUAL,
     SERIOUS,
     VERY_SERIOUS
-
 }
+
+

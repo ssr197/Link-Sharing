@@ -1,6 +1,6 @@
 package linksharing
 
-public enum Visibility {
+public enum Visibility{
     PRIVATE,
     PUBLIC
 }
