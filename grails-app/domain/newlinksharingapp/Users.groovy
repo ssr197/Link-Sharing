@@ -15,17 +15,18 @@ class Users {
     Date lastUpdated
 
     //relation to table ReadingItem and table ResourceRating
-    static hasMany = [subscribedTo:Subscription, topic:Topics, resource:Resources, readItem:ReadingItem, resourceRated:ResourcesRating]
-
-
-
+    static hasMany =
+            [subscribedTo:Subscription,
+             topic:Topics,
+             resource:Resources,
+             readItem:ReadingItem,
+             resourceRated:ResourcesRating]
 
     //setting the constraints
     static constraints = {
         email(unique:true, email:true)
         username(unique:true)
-        password(minSsize:6,maxSize:30)
         photo(nullable:true)
+        password blank: false, nullable: false, minSize: 4, maxSize: 64
     }
-
 }

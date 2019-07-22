@@ -133,18 +133,20 @@ dataSource {
 environments {
     development {
         dataSource {
-            dbCreate = 'create-drop'
+            dbCreate = 'update'
             url = 'jdbc:oracle:thin:@127.0.0.1:1521/orcl'
             username = 'LinkSharing'
             password = '785666'
         }
     }
+
     test {
         dataSource {
             dbCreate = 'create-drop'
             url = 'jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE'
         }
     }
+
     production {
         dataSource {
             dbCreate = 'none'

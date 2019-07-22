@@ -3,6 +3,7 @@
 
 <html>
 <head>
+    <asset:javascript src="MatchPassword.js"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="4nonymous">
 </head>
 <body>
@@ -90,28 +91,28 @@
         <div class="panel panel-default">
             <div class="panel-heading">Login</div>
             <div class="panel-body">
-                <form class="form-horizontal" action="/action_page.php">
+                <g:form class="form-horizontal" url="[controller:'users' , action : 'Login']">
                     <div class="form-group">
                         <text class="control-label col-md-4" for="email"  style="text-align: left;">Email/Username *</text>
                         <div class="col-md-8">
-                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                            <input type="email" class="form-control" id="lemail" placeholder="Enter email" name="l_email">
                         </div>
                     </div>
                     <div class="form-group">
-                        <text class="control-label col-md-4 " for="pwd" style="text-align: left;">Password *</text>
+                        <text class="control-label col-md-4 " for="l_pwd" style="text-align: left;">Password *</text>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                            <input type="password" class="form-control" id="lpwd" placeholder="Enter password" name="l_pwd">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class=" col-md-10">
-                            <a href="/" class="control-label col-md-8" style="text-align: left;">Forget Password</a>
+                            <a href="/users/forgetpassword" class="control-label col-md-8" style="text-align: left;">Forget Password</a>
                         </div>
                         <div class=" offset-md-1">
                             <button type="submit" class="btn btn-basic">Login</button>
                         </div>
                     </div>
-                </form>
+                </g:form>
             </div>
         </div>
         <div class="panel panel-default">
@@ -145,31 +146,32 @@
                     <div class="form-group">
                         <text class="control-label col-md-4" for="pwd" style="text-align: left;">Password *</text>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="passWord" placeholder="Enter Password" name="password">
+                            <input type="password" class="form-control" id="passWord" placeholder="Enter Password" name="password" >
                         </div>
                     </div>
                     <div class="form-group">
                         <text class="control-label col-md-4" for="pwd" style="text-align: left;">Confirm Password*</text>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword">
+                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword" onkeyup='MatchPassword()'>
+                        </div>
+                        <div>
+                            <span id="checkPass"></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <text class="control-label col-md-4 " for="pwd" style="text-align: left;">Photo</text>
-                        <div class="col-md-5">
+                        <text class="control-label col-md-4 " for="photo" style="text-align: left;">Photo</text>
+                        <div class="col-md-8">
                             <input type="file" class="form-control" id="pwd" placeholder="choose" name="pwd">
                         </div>
-
-                        <div class="col col-md-2">
-                            <button type="submit" class="btn btn-basic">Browse</button>
-                        </div>
-
                     </div>
+
                     <div class="form-group">
                         <div class=" col-md-8">
                         </div>
                         <div class=" col-md-4">
-                            <button type="submit" class="btn btn-basic btn-block" width=100%>Register</button>
+
+
+                            <button type="submit" id="submitButton" name="submitButton" class="btn btn-basic btn-block" width=100% >SignUp</button>
                         </div>
                     </div>
                 </g:form>
@@ -179,104 +181,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-<html>
-<head>
-    <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
-
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
-</head>
-<body>
-    <content tag="nav">
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
-                <li><a href="#">App profile: ${grailsApplication.config.grails?.profile}</a></li>
-                <li><a href="#">App version:
-                    <g:meta name="info.app.version"/></a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Grails version:
-                    <g:meta name="info.app.grailsVersion"/></a>
-                </li>
-                <li><a href="#">Groovy version: ${GroovySystem.getVersion()}</a></li>
-                <li><a href="#">JVM version: ${System.getProperty('java.version')}</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Controllers: ${grailsApplication.controllerClasses.size()}</a></li>
-                <li><a href="#">Domains: ${grailsApplication.domainClasses.size()}</a></li>
-                <li><a href="#">Services: ${grailsApplication.serviceClasses.size()}</a></li>
-                <li><a href="#">Tag Libraries: ${grailsApplication.tagLibClasses.size()}</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                    <li><a href="#">${plugin.name} - ${plugin.version}</a></li>
-                </g:each>
-            </ul>
-        </li>
-    </content>
-
-    <div class="svg" role="presentation">
-        <div class="grails-logo-container">
-            <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
-        </div>
-    </div>
-
-    <div id="content" role="main">
-        <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
-
-            <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
-            </p>
-
-            <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-</body>
-</html>
--->
