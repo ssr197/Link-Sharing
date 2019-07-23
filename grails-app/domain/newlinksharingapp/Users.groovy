@@ -8,7 +8,7 @@ class Users {
     String username
     String email
     String password
-    Byte photo
+    String photo
     Boolean active
     Boolean admin
     Date dateCreated
@@ -22,11 +22,11 @@ class Users {
              readItem:ReadingItem,
              resourceRated:ResourcesRating]
 
+
     //setting the constraints
     static constraints = {
         email(unique:true, email:true)
         username(unique:true)
-        photo(nullable:true)
         password blank: false, nullable: false, minSize: 4, maxSize: 64
     }
 }
