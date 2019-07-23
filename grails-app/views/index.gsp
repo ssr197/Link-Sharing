@@ -152,7 +152,7 @@
                     <div class="form-group">
                         <text class="control-label col-md-4" for="pwd" style="text-align: left;">Confirm Password*</text>
                         <div class="col-md-8">
-                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword" onkeyup='MatchPassword()'>
+                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword" onfocusout='MatchPassword()'>
                         </div>
                         <div>
                             <span id="checkPass"></span>

@@ -17,6 +17,7 @@ class LoginService {
 
             def fetchUser = Users.findByEmail(emailOrUsername)
             def fetchPassword = fetchUser.password
+
             if(loginPassword == fetchPassword){
                 return 1;
             }else{
