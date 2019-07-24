@@ -118,7 +118,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Sign Up</div>
             <div class="panel-body">
-                <g:form url="[controller:'users' , action : 'signup']" class="form-horizontal">
+                <g:uploadForm controller='users' action='signup' class="form-horizontal">
                     <div class="form-group">
                         <text class="control-label col-md-4" for="firstName" style="text-align: left;">First Name *</text>
                         <div class="col-md-8">
@@ -158,12 +158,28 @@
                             <span id="checkPass"></span>
                         </div>
                     </div>
+
+
                     <div class="form-group">
                         <text class="control-label col-md-4 " for="photo" style="text-align: left;">Photo</text>
                         <div class="col-md-8">
-                            <input type="file" class="form-control" id="pwd" placeholder="choose" name="pwd">
+                            <input type="file" class="form-control" id="pwd" placeholder="choose" name="image">
                         </div>
-                    </div>
+
+
+
+%{--                    </div>--}%
+
+%{--                    <g:uploadForm name="picUploadForm" class="well form-horizontal" controller="<your-controller-name>" action="savePicture">--}%
+
+%{--                        Select Picture: <input type="file" name="productPic"/>--}%
+%{--                        <button type="submit" class="btn btn-success">--}%
+%{--                            <g:message code="shopItem.btn.saveProductImage" default="Save Image"/>--}%
+%{--                        </button>--}%
+
+%{--                    </g:uploadForm>--}%
+
+
 
                     <div class="form-group">
                         <div class=" col-md-8">
@@ -174,7 +190,7 @@
                             <button type="submit" id="submitButton" name="submitButton" class="btn btn-basic btn-block" width=100% >SignUp</button>
                         </div>
                     </div>
-                </g:form>
+                </g:uploadForm>
             </div>
         </div>
     </div>

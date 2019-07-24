@@ -19,9 +19,9 @@ class LoginService {
             def fetchPassword = fetchUser.password
 
             if(loginPassword == fetchPassword){
-                return 1;
+                return fetchUser;
             }else{
-                return 0;
+                return null;
             }
         }
 

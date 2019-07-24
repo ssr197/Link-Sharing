@@ -5,7 +5,7 @@ import grails.transaction.Transactional
 @Transactional
 class SignupService {
 
-    def signupMethod(params) {
+    def signupMethod(params,request) {
 
         String password = params.password
         String confirmPassword = params.confirmpassword
@@ -20,10 +20,20 @@ class SignupService {
             String lastname = params.lastname
             String email = params.email
             String username = params.username
+
             Boolean admin = 0
             Boolean active = 1
 
-            Users userRegister = new Users(firstName: firstname, lastName: lastname, email: email, username: username, password: password, admin: admin, active: active)
+
+            String uname = params.username
+            def f = request.getFile('image')
+
+            String loc = '/home/saurabh/Desktop/Link-Sharing/src/Images/' + uname
+            File des=new File(loc)
+            f.transferTo(des)
+
+
+            Users userRegister = new Users(firstName: firstname, lastName: lastname, email: email, username: username, password: password, admin: admin, active: active, photo: loc)
             userRegister.save(flush: true, failOnError: true, validate: true)
 
         }

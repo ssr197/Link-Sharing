@@ -8,21 +8,23 @@ class UsersController {
     def updatePasswordService
 
     def signup() {
-        signupService.signupMethod(params)
-        //render("Signup Successful")
+        signupService.signupMethod(params,request)
+
     }
 
 
 
     def login() {
-        Integer loginValue = loginService.LoginMethod(params)
+       Users loginValue = loginService.LoginMethod(params)
 
-        if(loginValue == 1) {
+        if(loginValue) {
 
-            render(text: "Logged In")
+            session.name = loginValue.email
+            redirect(controller: 'Dashboard', action: 'index')
+
         }
         else {
-            render "Wrong passkey"
+            render view: 'login'
         }
     }
 
@@ -33,6 +35,8 @@ class UsersController {
         render view: "ForgetPassword"
     }
 
+
+
     def validateResetPasswordEmail(){
         /*Users userFromService = */
         if(resetPasswordService.validateEmail(params)==1){
@@ -42,27 +46,4 @@ class UsersController {
 
         }
     }
-
-
-
-/*
-
-    def validateResetPasswordEmail(){
-        Users userFromService = resetPasswordService.validateEmail(params)
-
-        if(userFromService) {
-            session.email = userFromService.email
-            redirect(action: 'updatepassword', params: [email: params.email])
-        }
-
-    }
-*/
-
-//
-//    def updatepassword(){
-//        //render(text: "Hello")
-//         String emailToService = session.email
-//
-//        updatePasswordService.savePassword(emailToService)
-//    }
 }
