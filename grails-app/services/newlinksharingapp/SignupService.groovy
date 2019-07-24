@@ -14,20 +14,16 @@ class SignupService {
             return 0
         }
         else{
-            //println 'inside service'
 
             String firstname = params.firstname
             String lastname = params.lastname
             String email = params.email
             String username = params.username
-
             Boolean admin = 0
             Boolean active = 1
 
-
             String uname = params.username
             def f = request.getFile('image')
-
             String loc = '/home/saurabh/Desktop/Link-Sharing/src/Images/' + uname
             File des=new File(loc)
             f.transferTo(des)
@@ -35,6 +31,7 @@ class SignupService {
 
             Users userRegister = new Users(firstName: firstname, lastName: lastname, email: email, username: username, password: password, admin: admin, active: active, photo: loc)
             userRegister.save(flush: true, failOnError: true, validate: true)
+
 
         }
     }

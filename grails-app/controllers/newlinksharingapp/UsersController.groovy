@@ -1,18 +1,29 @@
 package newlinksharingapp
 
+import org.h2.engine.User
+
 class UsersController {
 
     def signupService
     def loginService
     def resetPasswordService
     def updatePasswordService
+    def userListService
 
     def signup() {
-        signupService.signupMethod(params,request)
+        def signUpValue = signupService.signupMethod(params,request)
+
+
+        if(signUpValue){
+            session.name = signUpValue.email
+            redirect(controller: 'Dashboard', action: 'index')
+        }
+
+        else{
+            render text: "Not Successful"
+        }
 
     }
-
-
 
     def login() {
        Users loginValue = loginService.LoginMethod(params)
@@ -27,6 +38,19 @@ class UsersController {
             render view: 'login'
         }
     }
+
+    def showUserList(){
+        List<User> listAll = userListService.AllUsers();
+        render(view: "userList", model: [allUserList:listAll])
+
+    }
+
+
+
+
+
+
+
 
 
 

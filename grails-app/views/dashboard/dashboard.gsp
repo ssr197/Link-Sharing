@@ -141,7 +141,7 @@
                      <li class="fa fa-caret-down"  onclick="Show()"></li>
                     <ul class="nav nav-pills nav-stacked" id="drop" style="display:none">
                         <li style="height:20px"><a href="#">Profile</a></li>
-                        <li style="height:20px"><a href="#">Users</a></li>
+                        <li style="height:20px"><a href="/users/showUserList">Users</a></li>
                         <li style="height:20px"><a href="#">Topics</a></li>
                         <li style="height:20px"><a href="#">Posts</a></li>
                         <li style="height:20px"><a href="">Logout</a></li>

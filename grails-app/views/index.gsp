@@ -1,53 +1,85 @@
 <!doctype html>
-
-
 <html>
-<head>
-    <asset:javascript src="MatchPassword.js"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="4nonymous">
-</head>
-<body>
-<div class="container"><br>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="container">
-                <div class="col-md-8">
-                    <h4><a href="#"><strong> <u>Link Sharing</u></strong></a></h4>
-                </div>
-                <div class="col-md-3">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
-                        <div class="input-group-btn">
-                            <button class="btn btn-basic" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
+    <head>
+        <asset:javascript src="MatchPassword.js"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="4nonymous">
+    </head>
+
+
+    <body>
+        <div class="container">
+            <br>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="col-md-8">
+                            <h4>
+                                <a href="#">
+                                    <strong>
+                                        <u>
+                                            Link Sharing
+                                        </u>
+                                    </strong>
+                                </a>
+                            </h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
+                                <div class="input-group-btn">
+                                    <button class="btn btn-basic" type="submit">
+                                        <span class="glyphicon glyphicon-search">
+
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="col-md-7">
-        <div class="panel panel-default">
-            <div class="panel-heading">Recent Searches</div>
-            <div class="panel-body">
+            <div class="col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Recent Searches
+                    </div>
+                <div class="panel-body">
                 <table  style="width:100%">
-                    <td rowspan="3" width=25%> <img src="https://i.stack.imgur.com/l60Hf.png" height=120px width=125px></td>
-                    <td width=275px class="text">Kunal Singh</td>
-                    <td width=150px></td>
-                    <td width=150px></td>
+                    <td rowspan="3" width=25%>
+                        <img src="https://i.stack.imgur.com/l60Hf.png" height=120px width=125px>
+                    </td>
+                    <td width=275px class="text">
+                        Kunal Singh
+                    </td>
+                    <td width=150px>
+                    </td>
+                    <td width=150px>
+                    </td>
                     <td width=150px>
                         <a href="#">
                             Home Page
+                        </a>
                     </td>
-                </tr>
-                    <td colspan="5" height=100px>A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs.</td>
-                </tr>
-                    <td>Links</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href="">View</td>
+
+                    </tr>
+                        <td colspan="5" height=100px>
+                            A paragraph is a series of sentences that are organized and coherent, and are all related to a single topic. Almost every piece of writing you do that is longer than a few sentences should be organized into paragraphs.
+                        </td>
+                    </tr>
+                    <td>
+                        Links
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <a href="">
+                            View
+                        </a>
+                    </td>
                 </table>
             </div>
         </div>
@@ -55,11 +87,13 @@
             <div class="panel-heading">
                 <div class="container">
                     <div class="col-md-5">
-                        Top Posts</div>
+                        Top Posts
+                    </div>
                     <div class="col-md-2">
                         <div class="dropdown">
                             <button class="btn btn-basic dropdown-toggle" type="button" id="about-us" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Today  <span class="caret"></span>
+                                Today
+                                <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="about-us">
                                 <li><a href="#">One Week</a></li>
@@ -165,22 +199,6 @@
                         <div class="col-md-8">
                             <input type="file" class="form-control" id="pwd" placeholder="choose" name="image">
                         </div>
-
-
-
-%{--                    </div>--}%
-
-%{--                    <g:uploadForm name="picUploadForm" class="well form-horizontal" controller="<your-controller-name>" action="savePicture">--}%
-
-%{--                        Select Picture: <input type="file" name="productPic"/>--}%
-%{--                        <button type="submit" class="btn btn-success">--}%
-%{--                            <g:message code="shopItem.btn.saveProductImage" default="Save Image"/>--}%
-%{--                        </button>--}%
-
-%{--                    </g:uploadForm>--}%
-
-
-
                     <div class="form-group">
                         <div class=" col-md-8">
                         </div>
