@@ -8,22 +8,18 @@ class UsersController {
     def updatePasswordService
 
     def signup() {
-        signupService.signupMethod(params,request)
-
-
+        signupService.signupMethod(params)
         //render("Signup Successful")
     }
 
 
 
     def login() {
-       Users loginValue = loginService.LoginMethod(params)
+        Integer loginValue = loginService.LoginMethod(params)
 
-        if(loginValue) {
+        if(loginValue == 1) {
 
-            session.name = loginValue.email
-            redirect(controller: 'Dashboard', action: 'index')
-
+            render(text: "Logged In")
         }
         else {
             render "Wrong passkey"

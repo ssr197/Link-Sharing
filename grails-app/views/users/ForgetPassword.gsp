@@ -1,7 +1,7 @@
 <html>
 
   <head>
-    <title>Forget Password23</title>
+    <title>Forget Password</title>
   </head>
 
   <body>
