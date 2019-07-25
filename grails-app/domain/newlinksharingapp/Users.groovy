@@ -28,5 +28,6 @@ class Users {
         email(unique:true, email:true)
         username(unique:true)
         password blank: false, nullable: false, minSize: 1, maxSize: 64
+        photo nullable: true
     }
 }

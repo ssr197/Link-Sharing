@@ -24,7 +24,7 @@ class SignupService {
 
             String uname = params.username
             def f = request.getFile('image')
-            String loc = '/home/saurabh/Desktop/Link-Sharing/src/Images/' + uname
+            String loc = '/home/saurabh/Desktop/Link-Sharing/grails-app/assets/images/' + uname +'.png'
             File des=new File(loc)
             f.transferTo(des)
 
