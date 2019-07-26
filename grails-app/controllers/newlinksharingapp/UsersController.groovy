@@ -7,40 +7,33 @@ class UsersController {
     def signupService
     def loginService
     def resetPasswordService
-    def updatePasswordService
+    //def updatePasswordService
     def userListService
 
 // if Sign up successful, Returning to dashboard otherwise rendering text "Not successfull"
     def signup() {
         def signUpValue = signupService.signupMethod(params,request)
-
-
         if(signUpValue){
             session.name = signUpValue.email
-            redirect(controller: 'Dashboard', action: 'index')
-        }
-
-        else{
+            redirect(controller: 'dashboard', action: 'dashoard')
+        } else{
             render text: "Not Successful"
         }
-
     }
 
 
     // forwarding to loginService, redirecting to dashboard if successful otherwise to not successful
     def login() {
        Users loginValue = loginService.LoginMethod(params)
-
         if(loginValue) {
-
             session.name = loginValue.email
-            redirect(controller: 'Dashboard', action: 'index')
-
+            redirect(controller: 'dashboard', action: 'dashboard')
         }
         else {
             render view: 'login'
         }
     }
+
 
     //Ending the session on log out and redirecting to login page
     def logout() {
@@ -67,18 +60,7 @@ class UsersController {
             render(view: 'resetNewPass')
         }else{
             render(text: "Email Does Not Exists")
-
         }
     }
-
-
-
-
-
-
-
-
-
-
 
 }

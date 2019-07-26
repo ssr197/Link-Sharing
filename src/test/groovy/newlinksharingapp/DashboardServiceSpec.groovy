@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestFor(ValidateAndResetPasswordServiceSpec)
-class ValidateAndResetPasswordServiceSpec extends Specification {
+@TestFor(DashboardService)
+class DashboardServiceSpec extends Specification {
 
     def setup() {
     }

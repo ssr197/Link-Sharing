@@ -2,11 +2,15 @@ package newlinksharingapp
 
 class DashboardController {
 
+    def dashboardService
 
-    def index() {
-        Users user1 = Users.findByEmail(session.name)
-        //println session.name
-        //def topic = user1.topics.size()
-        render(view: 'dashboard', model: [userdata: user1])
+
+    def dashboard() {
+//        println "session name ="+session.name
+
+        Users u1 = Users.findByEmail(session.name)
+        Integer topicCount = dashboardService.totalTopicCount(session.name)
+        Integer subsCount = dashboardService.subscriptionCount(session.name)
+        render(view: "dashboard", model: [  userdata : u1, topicCount : topicCount, sessionCountNumber:subsCount])
     }
 }

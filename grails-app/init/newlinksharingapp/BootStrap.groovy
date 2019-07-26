@@ -3,6 +3,10 @@ package newlinksharingapp
 class BootStrap {
 
     def init = { servletContext ->
+
+/*
+
+        //    this code will add some some data to every table in databas. Commented because
         Users u1=new Users(username : 'Saurabh' , firstName : 'saurabh'  , lastName : 'Kumar' , password : '123' , admin : false , active : true , email : 'saurabh@gmail.com' )
         Users u2=new Users(username : 'b' , firstName : 'b'  , lastName : 'b' , password : '123' , admin : false , active : true , email : 'b@gmail.com')
         Users u3=new Users(username : 'c' , firstName : 'c'  , lastName : 'c' , password : '123' , admin : false , active : true , email : 'c@gmail.com')
@@ -95,6 +99,9 @@ class BootStrap {
         subs.save(flush:true,failOnError:true)
         sub.save(flush:true,failOnError:true)
         su.save(flush:true,failOnError:true)
+ */
+
+
 
     }
 
