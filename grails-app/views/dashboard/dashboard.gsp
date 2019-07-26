@@ -2,23 +2,29 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body{
+            background: #5D5C61;
+        }
+    </style>
 </head>
 
 <body>
 <div class="container"><br>
 
     <div class="row">
-        <div class="panel panel-default" color="red">
+        <div class="panel panel-default">
             <div class="panel-body">
-                <div class="container">
+                <div class="container col-md-12"style="background: #5bc0de" >
                     <div class="col-md-3">
-                        <h4>
+                        <h1>
                             <a href="#">
                                 <strong>
                                     <u><b>Link Sharing</b></u>
                                 </strong>
                             </a>
-                        </h4>
+                        </h1>
                     </div>
                     <div class="col-md-9">
                         <table class="table">
@@ -33,42 +39,41 @@
                                 </div>
                             </td>
                             <td width=20px style="text-align:center;">
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#topicModal">
+                                <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#topicModal">
                                     <i class="material-icons">chat_bubble_outline</i></button>
                             </td>
 
-                            <td width=30px style="text-align:center;">
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#invite">
+                            <td width=20px style="text-align:center;">
+                                <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#invite">
                                 <i class="material-icons">mail_outline</i>
                                 </button>
                             </td>
 
-                            <td width=30px>
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#uploadLink">
+                            <td width=20px>
+                                <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#uploadLink">
                                 <i class="material-icons" style="text-align:center;">
                                     attach_file
                                 </i>
                                 </button>
                             </td>
 
-                            <td width=25px>
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#uploadDocument">
+                            <td width=20px>
+                                <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#uploadDocument">
                                 <i class="material-icons" style="text-align:center;">
                                     description
                                 </i>
                                 </button>
                             </td>
-
-                            <td width=40px style="text-align:right;"><i class="material-icons">face</i>
-                            </td>
-
-                            <td width=30px>${userdata.username}
+                            <td width=40px>
+                                <button type="button" class="btn btn-info btn-warning" data-toggle="" data-target="">
+                                    <i class="photo" style="text-align:center;">${userdata.photo}</i>
+                                </button>
                             </td>
 
                             <td width=30px>
 
                                 <div class="dropdown" >
-                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">select
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">${userdata.username}
                                         <span class="caret" onclick="display()"></span></button>
                                     <ul class="dropdown-menu" id="drop">
                                         <li><a href="#">profile</a></li>
@@ -249,7 +254,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Create Topic</h4>
+                    <h4 class="modal-title">Send Invite To</h4>
                 </div>
                 <div class="modal-body">
                     <g:form controller="Topics" action="addTopics" class="topicForm">
@@ -383,7 +388,7 @@
             </div>
         </div>
     </div>
-    <!-- create topic Original-->
+    <!-- create topic-->
     <div class="modal fade" id="topicModal" role="dialog">
         <div class="modal-dialog">
             <!-- topic Modal content-->
@@ -412,7 +417,7 @@
     </div>
 </div>
 </div>
-    
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

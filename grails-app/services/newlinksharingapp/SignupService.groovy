@@ -26,6 +26,7 @@ class SignupService {
             Users userRegister = new Users(firstName: firstname, lastName: lastname, email: email, username: username, password: password, admin: admin, active: active, photo: loc)
             userRegister.save(flush: true, failOnError: true, validate: true)
             //return userRegister
+            //return userRegister
         }
     }
 }

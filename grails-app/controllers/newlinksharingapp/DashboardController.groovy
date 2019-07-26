@@ -6,8 +6,6 @@ class DashboardController {
 
 
     def dashboard() {
-//        println "session name ="+session.name
-
         Users u1 = Users.findByEmail(session.name)
         Integer topicCount = dashboardService.totalTopicCount(session.name)
         Integer subsCount = dashboardService.subscriptionCount(session.name)
@@ -20,6 +18,4 @@ class DashboardController {
     def forwardToUploadLink(){
         render(view: "uploadNewLink")
     }
-
-
 }

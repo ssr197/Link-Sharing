@@ -3,25 +3,29 @@
     <head>
         <asset:javascript src="MatchPassword.js"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="4nonymous">
+        <style>
+            body{
+                background: #5D5C61;
+            }
+        </style>
+
     </head>
 
 
     <body>
-        <div class="container">
+        <div class="container col-md-12">
             <br>
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="container">
+            <div class="panel panel-default col-md-12" style="background: #5bc0de">
+                <div class="panel-body col-md-12">
+                    <div class="container col-md-12">
                         <div class="col-md-8">
-                            <h4>
+                            <h2>
                                 <a href="#">
-                                    <strong>
-                                        <u>
-                                            Link Sharing
-                                        </u>
-                                    </strong>
+                                    <b>
+                                        Link Sharing
+                                    </b>
                                 </a>
-                            </h4>
+                            </h2>
                         </div>
                         <div class="col-md-3">
                             <div class="input-group">

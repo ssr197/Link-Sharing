@@ -15,7 +15,7 @@ class UsersController {
         def signUpValue = signupService.signupMethod(params,request)
         if(signUpValue){
             session.name = signUpValue.email
-            redirect(controller: 'dashboard', action: 'dashoard')
+            redirect(controller: 'dashboard', action: 'dashboard')
         } else{
             render text: "Not Successful"
         }
@@ -55,12 +55,19 @@ class UsersController {
 
     //check if email is present in database or not and act accordingly.
     def validateResetPasswordEmail(){
-        /*Users userFromService = */
+
         if(resetPasswordService.validateEmail(params)==1){
+            session.resetPass = params.fetchEmail
             render(view: 'resetNewPass')
         }else{
             render(text: "Email Does Not Exists")
         }
+    }
+    def updatePassword(){
+        String changePasswordOfEmail = session.resetPass
+        resetPasswordService.update(params,changePasswordOfEmail)
+        session.invalidate()
+        render("Please login with new password")
     }
 
 }
