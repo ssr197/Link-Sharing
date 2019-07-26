@@ -13,4 +13,13 @@ class DashboardController {
         Integer subsCount = dashboardService.subscriptionCount(session.name)
         render(view: "dashboard", model: [  userdata : u1, topicCount : topicCount, sessionCountNumber:subsCount])
     }
+
+    def forwardToUploadDocument(){
+        render(view: "uploadNewDocument")
+    }
+    def forwardToUploadLink(){
+        render(view: "uploadNewLink")
+    }
+
+
 }
