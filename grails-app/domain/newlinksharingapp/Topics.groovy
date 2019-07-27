@@ -14,5 +14,4 @@ class Topics {
     static constraints = {
 
     }
-
 }

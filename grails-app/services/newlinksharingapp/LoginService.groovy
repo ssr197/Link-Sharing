@@ -8,11 +8,14 @@ class LoginService {
     def LoginMethod(Map params) {
         String emailOrUsername = params.l_email
         String loginPassword = params.l_pwd
-        if(emailOrUsername == null || loginPassword == null){
-            return 0
-        }
-        else {
+        if(emailOrUsername == null){
+            return null
+        } else {
             def fetchUser = Users.findByEmail(emailOrUsername)
+            if(fetchUser == null){
+                return null
+            }
+
             def fetchPassword = fetchUser.password
             if(loginPassword == fetchPassword){
                 return fetchUser;

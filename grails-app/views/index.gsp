@@ -156,7 +156,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Sign Up</div>
             <div class="panel-body">
-                <g:uploadForm controller='users' action='signup' class="form-horizontal">
+                <g:uploadForm controller='users' action='signup' id="signupPage" class="form-horizontal" onsubmit="validatePasswordAtFrontEnd">
                     <div class="form-group">
                         <text class="control-label col-md-4" for="firstName" style="text-align: left;">First Name *</text>
                         <div class="col-md-8">
@@ -178,7 +178,7 @@
                     <div class="form-group">
                         <text class="control-label col-md-4" for="username" style="text-align: left;">Username *</text>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" id="userName" placeholder="Enter username" name="username">
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
                         </div>
                     </div>
                     <div class="form-group">
@@ -191,9 +191,9 @@
                         <text class="control-label col-md-4" for="pwd" style="text-align: left;">Confirm Password*</text>
                         <div class="col-md-8">
                             <input type="password" class="form-control" id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword" onfocusout='MatchPassword()'>
-                        </div>
-                        <div>
-                            <span id="checkPass"></span>
+                            <div>
+                                <span id="checkPass"></span>
+                            </div>
                         </div>
                     </div>
 

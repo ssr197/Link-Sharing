@@ -60,7 +60,7 @@ class UsersController {
             session.resetPass = params.fetchEmail
             render(view: 'resetNewPass')
         }else{
-            render(text: "Email Does Not Exists")
+            render view: "login"
         }
     }
     def updatePassword(){
