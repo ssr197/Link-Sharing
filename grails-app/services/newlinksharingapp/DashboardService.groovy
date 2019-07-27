@@ -19,10 +19,9 @@ class DashboardService {
         Integer TotalSubscriptionCountAsSum = numberOfSubscription.subscribedTo.size()
         return TotalSubscriptionCountAsSum
     }
-/*
     def subscriptions(String name) {
 
-        Users user = Users.findByUsername(name)
+        Users user = Users.findByEmail(name)
         List<Long> subscriptionList = Subscription.createCriteria().list{
             eq("user.id",user.id)
         }
@@ -31,14 +30,13 @@ class DashboardService {
 
     }
 
-    def subscriptioncount(Long topicids) {
+    def subscriptioncount(List topicids) {
 
         def topiccounts = Subscription.createCriteria().list()
                 {
                     projections{
                         count('topic.id')
                         groupProperty('topic.id')
-                        // countDistinct('topic.id')
                     }
                     'topic'{
                         inList('id',topicids)
@@ -109,5 +107,5 @@ class DashboardService {
             inList('id' , bbb)
         }
         return topicstrendy
-    }*/
+    }
 }
