@@ -19,7 +19,6 @@ class DashboardController {
         List trending = dashboardService.trendtopics()
         Users user = Users.findByEmail(session.name)
 
-/*
         render(view: "dashboard" ,model : [userdata : u1 ,
                                             user: user,
                                             count_topic : topicCount ,
@@ -27,10 +26,10 @@ class DashboardController {
                                             subscriptions : subscriptionLt,
                                             subscount:counts,
                                             resourcecount:resourcecount ,
-                                            trending : trending])
+                                            trending : trending]
+        )
 
-
-*/
+/*
         println "This is user u1 "+ u1
         println "This is user user "+ user
         println "This is user topicCount "+ topicCount
@@ -38,9 +37,7 @@ class DashboardController {
         println "This is user Subscounts "+ counts
         println "This is user resourcecount"+ resourcecount
         println "This is user trending "+ trending
-
-
- //       render(view: "dashboard", model: [  userdata : u1, topicCount : topicCount, sessionCountNumber:subsCount])
+*/
     }
 
 

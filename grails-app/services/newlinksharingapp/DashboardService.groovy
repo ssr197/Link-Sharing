@@ -103,7 +103,7 @@ class DashboardService {
             it.getAt(1)}
         xyz.removeAll{it==0}
         List bbb= xyz+(topicsid-xyz)
-        List <Topics> topicstrendy=Topics.createCriteria().list{
+        List <Topics> topicstrendy = Topics.createCriteria().list{
             inList('id' , bbb)
         }
         return topicstrendy
