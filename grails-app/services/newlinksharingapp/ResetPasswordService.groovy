@@ -20,12 +20,40 @@ class ResetPasswordService {
 
     def update(Map params, String email){
         String pass = params.newpassword
-        println "The new pasword which is recieved here is "+ pass
+        //println "The new pasword which is recieved here is "+ pass
         //Write logic to update password
         Users ux = Users.findByEmail(email)
         ux.password = pass
         ux.save(failOnError:true, flush:true)
 
+
+    }
+    def updateProfile(params, request, email){
+        //Write the logic to update the profile
+        Users u1 = Users.findByEmail(email)
+        String firstName = params.fname
+        String lastName = params.lname
+        //String password = params.password
+        String userName = params.uname
+        println "First Name = " + firstName
+        println "Last Name = " + lastName
+        println "User Name = " + userName
+        //println "Password = " +password
+
+        if(userName != null) {
+            u1.username = userName
+            u1.save(failOnError: true, flush: true)
+        }
+        if(firstName != null)
+        {
+            u1.firstName = firstName
+            u1.save(failOnError: true, flush: true)
+        }
+
+        if(lastName != null){
+            u1.lastName = lastName
+            u1.save(failOnError: true, flush: true)
+        }
 
     }
 }

@@ -1,5 +1,6 @@
 package newlinksharingapp
 
+import grails.artefact.Controller
 import org.h2.engine.User
 class UsersController {
 
@@ -55,23 +56,29 @@ class UsersController {
     def validateResetPasswordEmail(){
 
         if(resetPasswordService.validateEmail(params)==1){
-            session.resetPass = params.fetchEmail
+            session.name = params.fetchEmail
             render(view: 'resetNewPass')
         }else{
             render view: "login"
         }
     }
     def updatePassword(){
-        String changePasswordOfEmail = session.resetPass
+        String changePasswordOfEmail = session.name
         resetPasswordService.update(params,changePasswordOfEmail)
         session.invalidate()
-        render("Please login with new password")
+        redirect(url:"/")
+
     }
 
-
+    def openPageToChangeProfile(){
+        render(view: "updateUserProfile")
+    }
 
     def updateProfile(){
-        Users user = Users.findByEmail(session.name)
-        render(view: "updateUserProfile", model: [user1:user])
+        resetPasswordService.updateProfile(params, request, session.name)
+        redirect(controller: "dashboard", action: "dashboard")
     }
+
+
+
 }

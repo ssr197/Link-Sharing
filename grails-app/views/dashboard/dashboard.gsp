@@ -66,7 +66,7 @@
                                                 <span class="caret" onclick="display()"></span>
                                             </button>
                                             <ul class="dropdown-menu" id="drop">
-                                                <li><a href="/users/updateProfile">profile</a></li>
+                                                <li><a href="/users/openPageToChangeProfile">profile</a></li>
                                                 <li><a href="/users/showUserList">Users</a></li>
                                                 <li><a href="#">topic</a></li>
                                                 <li><a href="/users/logout">Logout</a></li>
@@ -117,14 +117,16 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <div style="float:left">Subscriptions</div>
-                                            <div style="margin-left:350px">View all</div>
+                                            <div style="margin-left:350px">@${userdata.username}</div>
                                         </div>
                                         <div class="panel-body">
                                             <g:each in="${subscriptions}" var="us" status="i">
                                                 <li>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <asset:image src="https://i.stack.imgur.com/l60Hf.png" style="width:60px;height:60px"/></div>
+                                                            %{--<asset:image src="https://i.stack.imgur.com/l60Hf.png" style="width:60px;height:60px"/>--}%
+                                                        <br><br>
+                                                        </div>
                                                         <div class="col-sm-8">
                                                             <div style="font-size:23px;"><g:link controller="dashboard" action="index" params="[id: us.id]">${us.topic.name}</g:link></div>
                                                             <div>@${us.topic.createdBy.username}</div>
