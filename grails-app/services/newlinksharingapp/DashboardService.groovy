@@ -97,15 +97,20 @@ class DashboardService {
                 else
                     return 0
             }
-        }.collect{if(!it)
-            return 0
-        else
-            it.getAt(1)}
+        }.collect{
+            if(!it)
+                return 0
+            else
+                it.getAt(0)
+        }
+
         xyz.removeAll{it==0}
         List bbb= xyz+(topicsid-xyz)
         List <Topics> topicstrendy = Topics.createCriteria().list{
             inList('id' , bbb)
         }
+
+
         return topicstrendy
     }
 }

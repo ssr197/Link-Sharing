@@ -8,6 +8,7 @@
                 background: #5D5C61;
             }
         </style>
+        <title>Home Page</title>
     </head>
 
     <body>
@@ -65,7 +66,7 @@
                                                 <span class="caret" onclick="display()"></span>
                                             </button>
                                             <ul class="dropdown-menu" id="drop">
-                                                <li><a href="#">profile</a></li>
+                                                <li><a href="/users/updateProfile">profile</a></li>
                                                 <li><a href="/users/showUserList">Users</a></li>
                                                 <li><a href="#">topic</a></li>
                                                 <li><a href="/users/logout">Logout</a></li>
@@ -268,91 +269,66 @@
                         </div>
 
                 %{--Upload Link--}%
-                <div class="modal fade" id="uploadLink" role="dialog">
+                <div class="modal fade"  id="uploadLink" role="dialog">
                     <div class="modal-dialog">
                         <!-- topic Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Upload Link</h4>
+                                <h4 class="modal-title">Share Link</h4>
                             </div>
                             <div class="modal-body">
-                                <g:form controller="topics" action="addTopics" class="topicForm">
-                                    Link :
-                                    <input class="form-control" type="url" name="linkUpload"/><br>
-                                    <text class="control-label col-md-2" for="desc" style="text-align: left;">Description*</text>
-                                    <div class="col-md-10">
-                                        <textarea type="text" class="form-control" id="urlId" placeholder="description" name="docdesc">
-                                        </textarea>
-                                    </div>
-                                    Topics*:
-                                    <select class="form-control" name="selection">
-                                        <option>Topic-1</option>
-                                        <option>Topic-2</option>
-                                    </select>
-                                    <input type="submit" class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                                </g:form>
+                                <g:uploadForm  controller="resources" action="saveLink" class="topicForm">
+                                    Link *:
+                                    <input type="text" class="form-control" id="linkres" placeholder="Link" name="linkres">
+                                    <br>
+                                    Description *:
+                                    <textarea class="form-control" id="selectlink" name="selectlink"></textarea>
+                                    <br>
+                                    <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
+                                    <br><br>
+                                    <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
+                                </g:uploadForm>
                             </div>
                             <div class="modal-footer" style=" margin-top: 15px;">
-                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
        %{--Upload Document--}%
-                        <div class="modal fade" id="uploadDocument" role="dialog">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">Share Document ( Pop up)</div>
-                                        <div class="panel-body">
-                                            <g:form class="form-horizontal">
-                                                <div class="form-group">
-                                                    <text class="control-label col-md-2" for="email" style="text-align: left;">Document *</text>
-                                                    <div class="col-md-10">
-                                                        <div class="col-md-8">
-                                                            <input type="file" class="form-control" id="Document" placeholder="choose" name="inputphoto">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <text class="control-label col-md-2" for="desc" style="text-align: left;">Description*</text>
-                                                    <div class="col-md-10">
-                                                        <textarea type="text" class="form-control" id="docdesc" placeholder="description" name="docdesc">
-                                                        </textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <text class="control-label col-md-2" for="email" style="text-align: left;">Topic *</text>
-                                                    <div class="dropdown  col-md-10"  >
-                                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >Topic
-                                                            <span class="caret" ></span></button>
-                                                        <ul class="dropdown-menu">
-                                                            <li><a href="#">HTML</a></li>
-                                                            <li><a href="#">CSS</a></li>
-                                                            <li><a href="#">JavaScript</a></li>
-                                                            <li class="divider"></li>
-                                                            <li><a href="#">About Us</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class=" col-md-8">
-                                                        <div class="col-md-offset-8">
-                                                            <button type="submit" class="btn btn-success" width=100%>Share</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </g:form>
-                                            <div class="modal-footer" style=" margin-top: 15px;">
-                                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="modal fade"  id="uploadDocument" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- topic Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Share Document</h4>
+                            </div>
+                            <div class="modal-body">
+                                <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">>
+                            Document *:
+                                    <input type="file" class="form-control" id="doc" placeholder="choose" name="document">
+                                    <br>
+                                    Description *:
+                                    <textarea class="form-control" id="select" name="select"></textarea>
+                                    <br>
+                                    <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topics" from="${subscriptions.topic.name}"  optionValue="value" />
+                                    <br>
+                                    <br>
+                                    <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
+                                </g:uploadForm>
+                            </div>
+                            <div class="modal-footer" style=" margin-top: 15px;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
         <!-- create topic-->
                         <div class="modal fade" id="topicModal" role="dialog">
@@ -392,6 +368,7 @@
                 function display(){
                     document.getElementById("drop").style.display="block";
                 }
+
                 var resetTopicForm = function () {
                     $(".topicForm").trigger("reset");
                 }

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Forget Password23</title>
+    <title>oops!!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     body{

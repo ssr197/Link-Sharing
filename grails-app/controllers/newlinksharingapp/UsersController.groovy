@@ -1,13 +1,11 @@
 package newlinksharingapp
 
 import org.h2.engine.User
-
 class UsersController {
 
     def signupService
     def loginService
     def resetPasswordService
-    //def updatePasswordService
     def userListService
 
 // if Sign up successful, Returning to dashboard otherwise rendering text "Not successfull"
@@ -70,4 +68,10 @@ class UsersController {
         render("Please login with new password")
     }
 
+
+
+    def updateProfile(){
+        Users user = Users.findByEmail(session.name)
+        render(view: "updateUserProfile", model: [user1:user])
+    }
 }
