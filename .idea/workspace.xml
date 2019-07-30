@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19314725-6f76-426d-9dc0-45a47776efc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/grails-app/views/search/search.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SignupService$_signupMethod_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SignupService$_signupMethod_closure1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SignupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SignupService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsService$_addTopicMethod_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsService$_addTopicMethod_closure1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/views/users/userList.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/users/userList.gsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -76,32 +66,35 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="130" column="46" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="130" selection-end-column="46" />
+            <state relative-caret-position="455">
+              <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="151" column="20" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#27#66#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/users/userList.gsp">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="54" column="75" selection-start-line="54" selection-start-column="75" selection-end-line="54" selection-end-column="75" />
+            <state relative-caret-position="347">
+              <caret line="250" column="82" selection-start-line="250" selection-start-column="82" selection-end-line="250" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,9 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>!=</find>
-      <find>show</find>
-      <find>sty</find>
       <find>topics</find>
       <find>user</find>
       <find>us.topic.user.</find>
@@ -144,9 +134,12 @@
       <find>inb</find>
       <find>&gt;&gt;</find>
       <find>2/div&gt;</find>
-      <find>subscount</find>
       <find>dropdown</find>
       <find>displa</find>
+      <find>count_topic</find>
+      <find>subscriptions</find>
+      <find>subscount</find>
+      <find>resourcecount</find>
     </findStrings>
     <replaceStrings>
       <replace>signupForm</replace>
@@ -201,11 +194,11 @@
         <option value="$PROJECT_DIR$/grails-app/views/search/search.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SearchService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SearchController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/users/userList.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" />
       </list>
     </option>
   </component>
@@ -279,6 +272,19 @@
               <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="newlinksharingapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
               <item name="newlinksharingapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -386,12 +392,12 @@
       <workItem from="1563961613377" duration="7000000" />
       <workItem from="1563975368774" duration="82617000" />
       <workItem from="1564171584738" duration="19437000" />
-      <workItem from="1564301562429" duration="60970000" />
+      <workItem from="1564301562429" duration="62759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238132000" />
+    <option name="totallyTimeSpent" value="239921000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -946,35 +952,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="113" column="10" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
-          <folding>
-            <element signature="e#27#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Subscription.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -1020,14 +1002,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/users/userList.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="130" column="46" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="130" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-700">
+          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1038,10 +1016,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/users/userList.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+        <state relative-caret-position="90">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="151" column="20" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="20" />
+          <folding>
+            <element signature="e#27#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="250" column="82" selection-start-line="250" selection-start-column="82" selection-end-line="250" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#li#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

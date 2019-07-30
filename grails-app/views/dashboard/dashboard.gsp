@@ -248,10 +248,10 @@
                                                             <div><a>Unsubscribe</a></div>
                                                             <div class="col-sm-6">
                                                                 Subscriptions:
-                                                                <div>{2}</div></div>
+                                                                <div>${subs1.get(i)}</div></div>
                                                             <div class="col-sm-6">
                                                                 Posts:
-                                                                <div><a>{2}</a></div>
+                                                                <div><a>${topic1.get(i)}</a></div>
                                                             </div>
                                                         </div>
                                                     </div>

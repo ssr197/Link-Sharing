@@ -115,4 +115,71 @@ class DashboardService {
         return tl
     }
 
+    def topTopicsPosts() {
+        List<Long> topicsid = Topics.list().collect {
+            it.id
+        }
+        //print topicsid
+        List abcd = Resources.createCriteria().list(max: 5)
+                {
+                    projections {
+                        count('topic.id')
+                        groupProperty('topic.id')
+                        // countDistinct('topic.id')
+                    }
+                    //order()
+                }
+        //println abcd
+        abcd.sort { b, a -> a.getAt(0) <=> b.getAt(0) }
+        //print abcd
+        List<Integer> xyz = topicsid.collect { x ->
+            abcd.find {
+                if (it.getAt(1) == x)
+                    return it.getAt(0)
+                else
+                    return 0
+            }
+        }.collect {
+            if (!it)
+                return 0
+            else
+                it.getAt(0)
+        }
+        return xyz
+    }
+
+
+    def topTopicSubs()
+    {
+        List<Long> topicsid = Topics.list().collect {
+            it.id
+        }
+        def topiccounts = Subscription.createCriteria().list()
+                {
+                    projections {
+                        count('topic.id')
+                        groupProperty('topic.id')
+                        // countDistinct('topic.id')
+                    }
+                    'topic' {
+                        inList('id', topicsid)
+                    }
+                }
+        //println topicsid
+        //println topiccounts
+        List<Integer> counts = topicsid.collect { x ->
+            topiccounts.find {
+                if (it.getAt(1) == x)
+                    return it.getAt(0)
+            }
+        }.collect {  if (!it)
+            return 0
+        else
+            it.getAt(0) }
+        //println counts
+        return counts
+    }
+
+
+
 }
