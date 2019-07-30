@@ -9,6 +9,50 @@
             }
         </style>
         <title>Home Page</title>
+%{--This is for hover drop down--}%
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+
+
+
+
     </head>
 
     <body>
@@ -21,14 +65,29 @@
                             <div class="col-md-9">
                                 <table class="table">
                                     <td width=200px>
-                                        <div class="input-group">
+
+
+                                        <g:form controller="search" action="search">
+                                            <div class="input-group">
+                                                <g:textField id="mytext" class="form-control" name="q" placeholder="Search" value="${q}"/>
+                                                <div class="input-group-btn">
+                                                    <button class="btn btn-basic" type="submit">
+                                                        <span class="glyphicon glyphicon-search"></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </g:form>
+
+
+
+                                        %{--<div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
                                             <div class="input-group-btn">
                                                 <button class="btn btn-basic" type="submit">
                                                     <span class="glyphicon glyphicon-search"></span>
                                                 </button>
                                             </div>
-                                        </div>
+                                        </div>--}%
                                     </td>
                                     <td width=20px style="text-align:center;">
                                         <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#topicModal">
@@ -61,16 +120,14 @@
 
 
                                     <td width=30px>
-                                        <div class="dropdown" >
-                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">${userdata.username}
-                                                <span class="caret" onclick="display()"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" id="drop">
-                                                <li><a href="/users/openPageToChangeProfile">profile</a></li>
-                                                <li><a href="/users/showUserList">Users</a></li>
-                                                <li><a href="#">topic</a></li>
-                                                <li><a href="/users/logout">Logout</a></li>
-                                            </ul>
+                                        <div class="dropdown">
+                                            <button class="dropbtn">${userdata.username}</button>
+                                            <div class="dropdown-content">
+                                                <a href="/users/openPageToChangeProfile">profile</a>
+                                                <a href="/users/showUserList">Users</a>
+                                                <a href="#">topic</a>
+                                                <a href="/users/logout">Logout</a>
+                                            </div>
                                         </div>
                                     </td>
                                 </table>
@@ -88,7 +145,7 @@
                                 <table  style="width:100%">
                                     <tr>
                                         <td rowspan="4" colspan="3" width="10%">
-                                            <asset:image src="grails-app/assets/images/{userdata.username}.png" height="100px" width="90px" style="margin-right: 10px;"/>
+                                            <asset:image src="${userdata.photo}" height="100px" width="90px" style="margin-right: 10px;"/>
                                         </td>
                                         <td width=200px class="text" colspan="3">${userdata.firstName} ${userdata.lastName}</td>
                                     </tr>
@@ -117,15 +174,14 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <div style="float:left">Subscriptions</div>
-                                            <div style="margin-left:350px">@${userdata.username}</div>
+                                            <div style="margin-left:300px">@${userdata.username}</div>
                                         </div>
                                         <div class="panel-body">
                                             <g:each in="${subscriptions}" var="us" status="i">
                                                 <li>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            %{--<asset:image src="https://i.stack.imgur.com/l60Hf.png" style="width:60px;height:60px"/>--}%
-                                                        <br><br>
+                                                            <asset:image src="https://i.stack.imgur.com/l60Hf.png" style="width:60px;height:60px"/>
                                                         </div>
                                                         <div class="col-sm-8">
                                                             <div style="font-size:23px;"><g:link controller="dashboard" action="index" params="[id: us.id]">${us.topic.name}</g:link></div>
@@ -185,18 +241,20 @@
                                                 <li>
                                                     <div class="row">
                                                         <div class="col-md-4">
-                                                            <img src="images.jpeg"/></div>
+                                                            <img src="{us.createdBy.photo}"/></div>
                                                         <div class="col-sm-8">
                                                             <div style="font-size:23px;"><b>${us.name}</b></div>
                                                             <div>@${us.createdBy.username}</div>
+                                                            <div><a>Unsubscribe</a></div>
                                                             <div class="col-sm-6">
                                                                 Subscriptions:
-                                                                <div>2</div></div>
+                                                                <div>{2}</div></div>
                                                             <div class="col-sm-6">
                                                                 Posts:
-                                                                <div><a>2</a></div></div>
+                                                                <div><a>{2}</a></div>
+                                                            </div>
                                                         </div>
-                                                        <a>Unsubscribe</a></div>
+                                                    </div>
                                                 </li>
                                             </g:each>
                                         </div>
@@ -310,7 +368,7 @@
                                 <h4 class="modal-title">Share Document</h4>
                             </div>
                             <div class="modal-body">
-                                <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">>
+                                <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">
                             Document *:
                                     <input type="file" class="form-control" id="doc" placeholder="choose" name="document">
                                     <br>

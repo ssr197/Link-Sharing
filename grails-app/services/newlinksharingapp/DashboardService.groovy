@@ -93,7 +93,7 @@ class DashboardService {
         List <Integer> xyz = topicsid.collect{ x ->
             abcd.find{
                 if (it.getAt(1)==x)
-                    return it.getAt(0)
+                    return it.getAt(1)
                 else
                     return 0
             }
@@ -101,16 +101,18 @@ class DashboardService {
             if(!it)
                 return 0
             else
-                it.getAt(0)
+                it.getAt(1)
         }
-
+        //println "(inside dashboard service) xyz is "+ xyz
         xyz.removeAll{it==0}
         List bbb= xyz+(topicsid-xyz)
-        List <Topics> topicstrendy = Topics.createCriteria().list{
-            inList('id' , bbb)
-        }
-
-
-        return topicstrendy
+        //println "bbb is "+ bbb
+        List<Topics> tl = []
+        def i
+        for(i=0;i<5;i++)
+            tl.add(Topics.get(bbb[i]))
+        //println "tl = "+ tl
+        return tl
     }
+
 }

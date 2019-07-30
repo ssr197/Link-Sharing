@@ -17,6 +17,7 @@ class DashboardController {
         List counts = dashboardService.subscriptioncount(topicids)
         List resourcecount = dashboardService.postscount(topicids)
         List trending = dashboardService.trendtopics()
+        print "This is trending topics " + trending
         Users user = Users.findByEmail(session.name)
 
         render(view: "dashboard" ,model : [userdata : u1 ,

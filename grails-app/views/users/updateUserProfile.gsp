@@ -31,38 +31,18 @@
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     </head>
     <body>
+    <div>
         <div class="container"><br>
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="container col-md-12" style="background: #5bc0de">
                             <div class="col-md-5">
-                                <h2><a href="#"><strong> <u><b>Link Sharing</b></u></strong></a></h2>
+                                <h2><a href="/dashboard/dashboard"><strong> <u><b>Link Sharing</b></u></strong></a></h2>
                             </div>
                             <div class="col-md-7">
                                 <table class="table">
 
-                                    %{--
-                                    <td width=200px>
-                                        <div class="input-group">
-                                            <g:textField id="mytext" class="form-control" name="q" placeholder="Search" value="${q}"/>
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-basic" type="submit">
-                                                    <span class="glyphicon glyphicon-search"></span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>--}%
-                                    %{--<td width=30px>
-                                        <div class="dropdown" >
-                                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">${userdata}
-                                            <span class="caret" onclick="display()" id="droped"></span></button>
-                                            <ul class="dropdown-menu" >
-                                                <li><a href="/Profile/Profile">profile</a></li>
-                                                <li><a href="/user/logout">Logout</a></li>
-                                            </ul>
-                                        </div>
-                                    </td>--}%
                                 <div class="container col-md-10">
                                     <br><br>
                                 </div>
@@ -72,7 +52,7 @@
                                         <span class="caret" onclick="display()"></span>
                                     </button>
                                     <ul class="dropdown-menu" id="drop">
-                                        <li><a href="/dashboard/dashboard">Go Back</a></li>
+                                        <li><a href="/dashboard/dashboard">Back</a></li>
                                         <li><a href="/users/showUserList">Users</a></li>
                                         <li><a href="#">topic</a></li>
                                         <li><a href="/users/logout">Logout</a></li>
@@ -164,6 +144,7 @@
             </div>
 
         </div>
+    </div>
     </body>
 </html>
 

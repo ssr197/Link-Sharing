@@ -10,21 +10,27 @@ class TopicsService {
     def addTopicMethod(params,email) {
         String topic_Name = params.topicName
 
-//        println "topic name = "+topic_Name
-//        println "topic selection = "+ params.selection
-
         Users u2 = Users.findByEmail(email)
         Topics t2 = new Topics(name: topic_Name ,visibility: params.selection)
-
-        println "User 2 = "+u2
-        println "Topic name =" + t2.name
-
         u2.addToTopic(t2)
+
         if(t2.validate()){
             t2.save(failOnError: true, flush: true)
             u2.save(flush: true)
         } else{
             t2.errors.getAllErrors()
         }
+
+        Subscription sub = new Subscription(seriousness: Seriousness.VERY_SERIOUS)
+        u2.addToSubscribedTo(sub)
+        t2.addToSubscribedTo(sub)
+        if (sub.validate()) {
+//            print 'Validated*****************************'
+            sub.save(failOnError: true, flush: true)
+        } else {
+//            print 'Validation Failed by shalin1*****************************'
+            print sub.errors.getAllErrors()
+        }
+
     }
 }
