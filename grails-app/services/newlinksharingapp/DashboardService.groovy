@@ -19,13 +19,15 @@ class DashboardService {
         Integer TotalSubscriptionCountAsSum = numberOfSubscription.subscribedTo.size()
         return TotalSubscriptionCountAsSum
     }
+
     def subscriptions(String name) {
 
         Users user = Users.findByEmail(name)
         List<Long> subscriptionList = Subscription.createCriteria().list{
             eq("user.id",user.id)
         }
-        subscriptionList.sort{b,a-> a.topic.lastUpdated<=>b.topic.lastUpdated}
+        subscriptionList.sort{
+            b,a-> a.topic.lastUpdated<=>b.topic.lastUpdated}
         return subscriptionList
 
     }
@@ -103,35 +105,26 @@ class DashboardService {
             else
                 it.getAt(1)
         }
-        //println "(inside dashboard service) xyz is "+ xyz
         xyz.removeAll{it==0}
         List bbb= xyz+(topicsid-xyz)
-        //println "bbb is "+ bbb
         List<Topics> tl = []
         def i
         for(i=0;i<5;i++)
             tl.add(Topics.get(bbb[i]))
-        //println "tl = "+ tl
         return tl
     }
-
     def topTopicsPosts() {
         List<Long> topicsid = Topics.list().collect {
             it.id
         }
-        //print topicsid
-        List abcd = Resources.createCriteria().list(max: 5)
+                List abcd = Resources.createCriteria().list(max: 5)
                 {
                     projections {
                         count('topic.id')
                         groupProperty('topic.id')
-                        // countDistinct('topic.id')
                     }
-                    //order()
                 }
-        //println abcd
         abcd.sort { b, a -> a.getAt(0) <=> b.getAt(0) }
-        //print abcd
         List<Integer> xyz = topicsid.collect { x ->
             abcd.find {
                 if (it.getAt(1) == x)
@@ -149,6 +142,9 @@ class DashboardService {
     }
 
 
+    
+
+
     def topTopicSubs()
     {
         List<Long> topicsid = Topics.list().collect {
@@ -159,14 +155,11 @@ class DashboardService {
                     projections {
                         count('topic.id')
                         groupProperty('topic.id')
-                        // countDistinct('topic.id')
                     }
                     'topic' {
                         inList('id', topicsid)
                     }
                 }
-        //println topicsid
-        //println topiccounts
         List<Integer> counts = topicsid.collect { x ->
             topiccounts.find {
                 if (it.getAt(1) == x)
@@ -176,10 +169,6 @@ class DashboardService {
             return 0
         else
             it.getAt(0) }
-        //println counts
         return counts
     }
-
-
-
 }

@@ -43,7 +43,10 @@ class UsersController {
     //Show the list of all the users available
     def showUserList(){
         List<User> listAll = userListService.AllUsers();
-        render(view: "userList", model: [allUserList:listAll])
+        println "the session here in userController is" + session.name
+        Users u1 = Users.findByEmail(session.name)
+        //redirect(view: "userList", model:[allUserList:listAll, userdata:u1])
+        render(view: "userList", model: [allUserList:listAll,userdata:u1])
 
     }
     //redirecting to forget password page
@@ -77,6 +80,13 @@ class UsersController {
     def updateProfile(){
         resetPasswordService.updateProfile(params, request, session.name)
         redirect(controller: "dashboard", action: "dashboard")
+    }
+
+    def changeAdminPermission(){
+        Users u = Users.findByEmail(session.name)
+        if(u.admin = false) {
+            u.admin = true
+        }
     }
 
 

@@ -50,9 +50,6 @@
         .dropdown:hover .dropbtn {background-color: #3e8e41;}
         </style>
 
-
-
-
     </head>
 
     <body>
@@ -65,8 +62,6 @@
                             <div class="col-md-9">
                                 <table class="table">
                                     <td width=200px>
-
-
                                         <g:form controller="search" action="search">
                                             <div class="input-group">
                                                 <g:textField id="mytext" class="form-control" name="q" placeholder="Search" value="${q}"/>
@@ -77,17 +72,6 @@
                                                 </div>
                                             </div>
                                         </g:form>
-
-
-
-                                        %{--<div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" id="txtSearch"/>
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-basic" type="submit">
-                                                    <span class="glyphicon glyphicon-search"></span>
-                                                </button>
-                                            </div>
-                                        </div>--}%
                                     </td>
                                     <td width=20px style="text-align:center;">
                                         <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#topicModal">
@@ -113,21 +97,30 @@
 
                                     <td width=40px>
                                         <button type="button" class="btn btn-info btn-warning" data-toggle="" data-target="">
-                                            <asset:image src="${resource(dir: '/images', file: 'b.png')}" height="25px" width="20px"/>
-                                            %{--<i class="photo" style="text-align:center;">${userdata.photo}</i>--}%
+                                            <i class="photo" style="text-align:center;">
+                                                <asset:image src="${userdata.photo}" height="25px" width="20px"/>
+                                            </i>
                                         </button>
                                     </td>
-
-
                                     <td width=30px>
                                         <div class="dropdown">
-                                            <button class="dropbtn">${userdata.username}</button>
-                                            <div class="dropdown-content">
-                                                <a href="/users/openPageToChangeProfile">profile</a>
-                                                <a href="/users/showUserList">Users</a>
-                                                <a href="#">topic</a>
-                                                <a href="/users/logout">Logout</a>
-                                            </div>
+                                            <button class="btn btn-primary">${userdata.username}</button>
+                                            <g:if test="${userdata.admin}">
+                                                <div class="dropdown-content">
+                                                    <a href="/users/openPageToChangeProfile">profile</a>
+                                                    <a href="/users/showUserList">Users</a>
+                                                    <a href="#">topic</a>
+                                                    <a href="/users/logout">Logout</a>
+                                                </div>
+                                            </g:if>
+                                            <g:else>
+                                                <div class="dropdown-content">
+                                                    <a href="/users/openPageToChangeProfile">profile</a>
+                                                    %{--<a href="/users/showUserList">Users</a>--}%
+                                                    %{--<a href="#">topic</a>--}%
+                                                    <a href="/users/logout">Logout</a>
+                                                </div>
+                                            </g:else>
                                         </div>
                                     </td>
                                 </table>
@@ -171,62 +164,62 @@
                                 <div class="col-md-5">
 
                                     <!--subscription Modal-->
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <div style="float:left">Subscriptions</div>
-                                            <div style="margin-left:300px">@${userdata.username}</div>
-                                        </div>
-                                        <div class="panel-body">
-                                            <g:each in="${subscriptions}" var="us" status="i">
-                                                <li>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <asset:image src="https://i.stack.imgur.com/l60Hf.png" style="width:60px;height:60px"/>
-                                                        </div>
-                                                        <div class="col-sm-8">
-                                                            <div style="font-size:23px;"><g:link controller="dashboard" action="index" params="[id: us.id]">${us.topic.name}</g:link></div>
-                                                            <div>@${us.topic.createdBy.username}</div>
-                                                            <div class="col-sm-6">
-                                                                Subscriptions:
-                                                                <div>${subscount.getAt(i) }</div></div>
-                                                            <div class="col-sm-6">
-                                                                Posts:
-                                                                <div><a>${resourcecount.get(i)}</a></div></div>
-                                                            <a>Unsubscribe</a></div></div>
-                                                    <g:if test  = "${us.topic.createdBy.email==session.name}" >
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div style="float:left">Subscriptions</div>
+                                                <div style="float:right">@${userdata.username}</div><br>
+                                            </div>
+                                            <div class="panel-body">
+                                                <g:each in="${subscriptions}" var="us" status="i">
+                                                    <li>
                                                         <div class="row">
-                                                            <div class="col-md-12">
-                                                                <ul class="list-inline">
-                                                                    <li>
-                                                                        <g:form controller="subscriptions" action="updateSerious">
-                                                                            <g:field type="hidden" name="id" value="${us.id}"></g:field>
-                                                                            <g:select onChange="submit()" name="seriousness" from="${['SERIOUS','CASUAL','VERY_SERIOUS']}"
-                                                                                      value="${us.seriousness}" />
-                                                                        </g:form>
-                                                                    </li>
-                                                                    <li>
-                                                                        <g:form controller="topic" action="updateVisibility">
-                                                                            <g:field type="hidden" name="id" value="${us.topicId}"></g:field>
-                                                                            <g:select onChange="submit()" name="visibility" from="${['PUBLIC','PRIVATE']}"
-                                                                                      value="${us.topic.visibility}" />
-                                                                        </g:form>
-                                                                    </li>
-                                                                </ul>
+                                                            <div class="col-md-4">
+                                                                <asset:image src="${us.topic.createdBy.photo}" style="width:60px;height:60px"/>
                                                             </div>
-                                                        </div>
-                                                    </g:if>
-                                                    <g:else>
-                                                        <g:form controller="subscriptions" action="updateSerious">
-                                                            <g:field type="hidden" name="id" value="${us.id}"></g:field>
-                                                            <g:select onChange="submit()" name="seriousness" from="${['SERIOUS','CASUAL','VERY_SERIOUS']}"
-                                                                      value="${us.seriousness}" />
-                                                        </g:form>
-                                                    </g:else>
-                                                </li>
-                                            </g:each>
+                                                            <div class="col-sm-8">
+                                                                <div style="font-size:23px;"><g:link controller="dashboard" action="index" params="[id: us.id]">${us.topic.name}</g:link></div>
+                                                                <div>@${us.topic.createdBy.username}</div>
+                                                                <div class="col-sm-6">
+                                                                    Subscriptions:
+                                                                    <div>${subscount.getAt(i) }</div></div>
+                                                                <div class="col-sm-6">
+                                                                    Posts:
+                                                                    <div><a>${resourcecount.get(i)}</a></div></div>
+                                                                <a>Unsubscribe</a></div></div>
+                                                        <g:if test  = "${us.topic.createdBy.email==session.name}" >
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <ul class="list-inline">
+                                                                        <li>
+                                                                            <g:form controller="subscriptions" action="updateSerious">
+                                                                                <g:field type="hidden" name="id" value="${us.id}"></g:field>
+                                                                                <g:select onChange="submit()" name="seriousness" from="${['SERIOUS','CASUAL','VERY_SERIOUS']}"
+                                                                                          value="${us.seriousness}" />
+                                                                            </g:form>
+                                                                        </li>
+                                                                        <li>
+                                                                            <g:form controller="topic" action="updateVisibility">
+                                                                                <g:field type="hidden" name="id" value="${us.topicId}"></g:field>
+                                                                                <g:select onChange="submit()" name="visibility" from="${['PUBLIC','PRIVATE']}"
+                                                                                          value="${us.topic.visibility}" />
+                                                                            </g:form>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </g:if>
+                                                        <g:else>
+                                                            <g:form controller="subscriptions" action="updateSerious">
+                                                                <g:field type="hidden" name="id" value="${us.id}"></g:field>
+                                                                <g:select onChange="submit()" name="seriousness" from="${['SERIOUS','CASUAL','VERY_SERIOUS']}"
+                                                                          value="${us.seriousness}" />
+                                                            </g:form>
+                                                        </g:else>
+                                                    </li>
+                                                </g:each>
 
+                                            </div>
                                         </div>
-                                    </div>
 
 
                                     %{--Trending topic List--}%
@@ -234,35 +227,32 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <div style="float:left">Trending Topics</div>
-                                            <div style="margin-left:350px">View all</div>
+                                            <div style="float: right">${userdata.username}</div><br>
                                         </div>
                                         <div class="panel-body">
-                                            <g:each in="${trending}" var="us" status="i">
-                                                <li>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <img src="{us.createdBy.photo}"/></div>
-                                                        <div class="col-sm-8">
-                                                            <div style="font-size:23px;"><b>${us.name}</b></div>
-                                                            <div>@${us.createdBy.username}</div>
-                                                            <div><a>Unsubscribe</a></div>
-                                                            <div class="col-sm-6">
-                                                                Subscriptions:
-                                                                <div>${subs1.get(i)}</div></div>
-                                                            <div class="col-sm-6">
-                                                                Posts:
-                                                                <div><a>${topic1.get(i)}</a></div>
+                                            <div class="card-horizontal">
+                                                <g:each in="${trending}" var="us" status="i">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <img src="{us.createdBy.photo}"/></div>
+                                                            <div class="col-sm-8">
+                                                                <div style="font-size:23px;"><b>${us.name}</b></div>
+                                                                <div>@${us.createdBy.username}</div>
+                                                                <div><a>Unsubscribe</a></div>
+                                                                <div class="col-sm-6">
+                                                                    Subscriptions:
+                                                                    <div>${subs1.get(i)}</div></div>
+                                                                <div class="col-sm-6">
+                                                                    Posts:
+                                                                    <div><a>${topic1.get(i)}</a></div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </li>
-                                            </g:each>
+                                                    </li>
+                                                </g:each>
+                                            </div>
                                         </div>
-                                        <script>
-                                            function show() {
-                                                document.getElementById("drop").style.display="block";
-                                            }
-                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -314,10 +304,10 @@
                                             Email *:
                                             <input class="form-control" type="text" name="topicName"/>
                                             topic *:
-                                            <select class="form-control" name="selection">
-                                                <option>Option-1</option>
-                                                <option>Option-2</option>
-                                            </select>
+                                            <br>
+                                            <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
+                                            <br><br>
+                                            <br><br>
                                             <input type="submit" class="btn btn-success" style="float: right; margin-top: 5px;"/>
                                         </g:form>
                                     </div>
@@ -331,7 +321,7 @@
                 %{--Upload Link--}%
                 <div class="modal fade"  id="uploadLink" role="dialog">
                     <div class="modal-dialog">
-                        <!-- topic Modal content-->
+                        <!-- Upload Link content-->
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -361,7 +351,7 @@
        %{--Upload Document--}%
                 <div class="modal fade"  id="uploadDocument" role="dialog">
                     <div class="modal-dialog">
-                        <!-- topic Modal content-->
+                        <!-- Upload Document content-->
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -369,20 +359,19 @@
                             </div>
                             <div class="modal-body">
                                 <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">
-                            Document *:
+                                    Document *:
                                     <input type="file" class="form-control" id="doc" placeholder="choose" name="document">
                                     <br>
                                     Description *:
                                     <textarea class="form-control" id="select" name="select"></textarea>
                                     <br>
                                     <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topics" from="${subscriptions.topic.name}"  optionValue="value" />
-                                    <br>
-                                    <br>
+                                    <br><br>
                                     <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
                                 </g:uploadForm>
                             </div>
                             <div class="modal-footer" style=" margin-top: 15px;">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>

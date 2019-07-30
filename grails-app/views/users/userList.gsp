@@ -102,24 +102,28 @@
                 <td>
                     <div class="dropdown">
                         <button class="dropbtn">select</button>
-                        <div class="dropdown-content">
-                            <a href="/dashboard/dashboard">Back</a>
-                            <a href="/users/showUserList">Topics</a>
-                            <a href="#">topic</a>
-                            <a href="/users/logout">Logout</a>
-                        </div>
+                        <g:if test="${userdata.admin}">
+                            <div class="dropdown-content">
+                                <a href="/dashboard/dashboard">Back</a>
+                                <a href="/users/openPageToChangeProfile">profile</a>
+                                <a href="#">topic</a>
+                                <a href="/users/logout">Logout</a>
+                            </div>
+                        </g:if>
+                        <g:else>
+                            <div class="dropdown-content">
+                                <a href="/users/openPageToChangeProfile">profile</a>
+                                %{--<a href="/users/showUserList">Users</a>--}%
+                                %{--<a href="#">topic</a>--}%
+                                <a href="/users/logout">Logout</a>
+                            </div>
+                        </g:else>
                     </div>
                 </td>
             </table>
         </div>
     </div>
 </div>
-
-
-
-
-
-	
     <table>
       <tr>
         <th>Id</th>

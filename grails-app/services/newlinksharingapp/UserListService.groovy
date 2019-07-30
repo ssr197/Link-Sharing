@@ -12,6 +12,7 @@ class UserListService {
         List AllUserList = Users.list()
         return AllUserList;
     }
+    def changerPermission(){
 
-
+    }
 }
