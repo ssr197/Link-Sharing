@@ -17,5 +17,10 @@ class ResourcesController {
         //render("Wow, You are done with uploading link")
         redirect(controller: "dashboard", action: "dashboard")
     }
+    def downloadFile(){
+        
+
+    }
+
 
 }

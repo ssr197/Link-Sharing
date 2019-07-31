@@ -4,9 +4,7 @@
   Date: 31/7/19
   Time: 2:14 PM
 --%>
-
-<%@ page contentType="text/html;charset=UTF-8" %>
-
+<%@ page import="newlinksharingapp.Users" contentType="text/html;charset=UTF-8" %>
 <html>
     <head>
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
@@ -65,30 +63,62 @@
         }
         body{
             background: #5D5C61;
-
             }
-
-
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: block;}
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
         </style>
     </head>
-
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="topnav">
-                        <a class="active" href="#">Link Shairing</a>
-                        <div class="search-container">
-                            <form action="/action_page.php">
-                                <input type="text" placeholder="Search.." name="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
+        <div class="container" style="padding-top: 20px">
+            <div class="panel panel-default" style="height:70px; background: #5bc0de">
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="col-md-10">
+                            <h3><a href="#"><strong><u>Link Sharing</u></strong></a></h3>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="dropdown">
+                                <button class="btn btn-success">Select</button>
+                                <div class="dropdown-content">
+                                    <a href="/dashboard/dashhboard">Back</a>
+                                    <a href="/users/openPageToChangeProfile">profile</a>
+                                    <a href="/users/showUserList">Users</a>
+                                    <a href="/users/logout">Logout</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            %{--<h2>Users List</h2>
-            <p>The table represent the all users</p>--}%
             <table id="example" class="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -96,6 +126,7 @@
                         <th>Topicname</th>
                         <th>Username</th>
                         <th>Visibility</th>
+                        <th>Manage</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -104,13 +135,18 @@
                             <td>${topic.id}</td>
                             <td>${topic.name}</td>
                             <td>${topic.createdBy.username}</td>
-                            <td>Nothing</td>
+                            <td>${topic.visibility}</td>
+                            <g:if test="${newlinksharingapp.Users.findByEmail(session.name).admin}">
+                            <td><button class="btn btn-warning">
+                                    <g:link controller="topics" action="deleteTopics" params="${[variable1: topic.id, variable2: topic.createdBy.email]}">Delete</g:link>
+                                </button>
+                            </td>
+                            </g:if>
                         </tr>
                     </g:each>
                 </tbody>
             </table>
         </div>
-
         <script>
             $(document).ready(function() {
                 $('#example').DataTable();

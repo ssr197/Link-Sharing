@@ -2,103 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19314725-6f76-426d-9dc0-45a47776efc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4/taskHistory/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4/taskHistory/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4/taskHistory/fileSnapshots.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4/taskHistory/fileSnapshots.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/3.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/3.4/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grails-app/views/topics/ShowTopics.gsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/BootStrap$_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/BootStrap$_closure1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/BootStrap$_closure2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/BootStrap$_closure2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure12$_closure24.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure13$_closure26.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure14$_closure35.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure14$_closure35.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure14$_closure36.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure14$_closure36.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure14.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure15$_closure37.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure15$_closure37.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure15.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure15.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure16.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__postscount_closure16.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure10$_closure23.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure11$_closure32.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure11$_closure32.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure11$_closure33.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure11$_closure33.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure11.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure12$_closure34.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure12$_closure34.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure12.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure13.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptioncount_closure9$_closure21.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptions_closure10.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptions_closure10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptions_closure9.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__subscriptions_closure9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure28.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure28.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure29$_closure42.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure29$_closure42.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure29$_closure43.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure29$_closure43.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure29.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure29.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure30$_closure44.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure30$_closure44.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure30.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure30.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure31.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicSubs_closure31.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure23.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure23.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure24$_closure40.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure24$_closure40.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure24.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure24.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure25.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure25.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure26$_closure41.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure26$_closure41.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure26.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure26.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure27.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__topTopicsPosts_closure27.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure16$_closure27.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure17.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure18$_closure28.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure18$_closure38.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure18$_closure38.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure18.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure19.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure19.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure20$_closure39.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure20$_closure39.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure20.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure20.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure21.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure21.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure22.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$__tt__trendtopics_closure22.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_postscount_closure5.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_postscount_closure5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_sCount_closure2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_sCount_closure2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_subscriptioncount_closure4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_subscriptioncount_closure4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_subscriptions_closure3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_subscriptions_closure3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_topTopicSubs_closure8.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_topTopicSubs_closure8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_topTopicsPosts_closure7.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_topTopicsPosts_closure7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_totalTopicCount_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_totalTopicCount_closure1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_trendtopics_closure6.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService$_trendtopics_closure6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DashboardService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DocumentResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/DocumentResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/LinkResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/LinkResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/ReadingItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/ReadingItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Resources.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Resources.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/ResourcesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/ResourcesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/ResourcesRating.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/ResourcesRating.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SearchController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SearchController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SearchService$_serviceMethod_closure1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Subscription.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Subscription.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SubscriptionsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/SubscriptionsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Topics.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Topics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UserListService$_AllUsers_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UserListService$_AllUsers_closure1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UserListService$_changerPermission_closure2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UserListService$_changerPermission_closure2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UserListService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UserListService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/grails.build.info" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/grails.build.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/stacktrace.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/stacktrace.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/main/newlinksharingapp/TopicsController$_topicshow_closure2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/conf/application.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/conf/application.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UsersController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UsersController.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/LoginService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/LoginService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionService.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResetPasswordService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResetPasswordService.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResourcesService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResourcesService.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/UserListService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/services/newlinksharingapp/UserListService.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/views/users/userList.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/users/userList.gsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -160,21 +75,95 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/UserListService.groovy">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/topics/ShowTopics.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="81">
+              <caret line="141" column="41" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#td#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#td#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#button#0;n#td#4;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#td#5;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5825#5832#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#9128#9135#1#HTML" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UsersController.groovy">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/ResourcesController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+            <state relative-caret-position="135">
+              <caret line="9" column="50" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Resources.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="419">
+              <caret line="67" column="57" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="387" column="22" lean-forward="true" selection-start-line="361" selection-start-column="16" selection-end-line="387" selection-end-column="22" />
               <folding>
-                <element signature="e#27#60#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Users.groovy">
+          <provider selected="true" editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+              <folding>
+                <element signature="e#27#66#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,19 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>upload D</find>
-      <find>username</find>
-      <find>prof</find>
-      <find>display</find>
-      <find>controll</find>
-      <find>controller</find>
-      <find>Subscriptions</find>
-      <find>im</find>
-      <find>inb</find>
-      <find>&gt;&gt;</find>
-      <find>2/div&gt;</find>
-      <find>dropdown</find>
-      <find>displa</find>
       <find>count_topic</find>
       <find>subscount</find>
       <find>resourcecount</find>
@@ -217,10 +193,23 @@
       <find>id:us.id, page</find>
       <find>page</find>
       <find>dashboard</find>
-      <find>subscribe</find>
-      <find>subscriptions</find>
       <find>subscrib</find>
+      <find>selection</find>
+      <find>subscriptions</find>
+      <find>subscribe</find>
+      <find>subscri</find>
+      <find>Topics</find>
+      <find>Topic</find>
+      <find>logout</find>
+      <find>trending</find>
+      <find>over</find>
       <find>subscription</find>
+      <find>600</find>
+      <find>topic</find>
+      <find>li</find>
+      <find>Linkurl</find>
+      <find>rese</find>
+      <find>invite</find>
     </findStrings>
     <replaceStrings>
       <replace>signupForm</replace>
@@ -253,16 +242,13 @@
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/matchPassword.js" />
         <option value="$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Topics.groovy" />
         <option value="$PROJECT_DIR$/grails-app/assets/javascripts/validatePasswordAtFrontEnd.js" />
-        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResourcesService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/ResourcesController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/users/ForgetPassword.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/users/login.gsp" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/987eab5a-fb6a-48b5-bbe0-be61108c01a7/console.sql" />
-        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResetPasswordService.groovy" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/search/search.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SearchService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SearchController.groovy" />
@@ -271,16 +257,20 @@
         <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UsersController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/application.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionService.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/users/userList.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/UserListService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResourcesService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResetPasswordService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/application.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/topics/ShowTopics.gsp" />
       </list>
     </option>
   </component>
@@ -321,19 +311,6 @@
               <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -353,13 +330,7 @@
               <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
               <item name="newlinksharingapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -373,26 +344,7 @@
               <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="topics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="grails-app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="newLinkSharingApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Link-Sharing" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -475,12 +427,12 @@
       <workItem from="1563975368774" duration="82617000" />
       <workItem from="1564171584738" duration="19437000" />
       <workItem from="1564301562429" duration="87654000" />
-      <workItem from="1564548332321" duration="16615000" />
+      <workItem from="1564548332321" duration="32016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281431000" />
+    <option name="totallyTimeSpent" value="296832000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -795,7 +747,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionsService.groovy" />
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UrlMappings.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -833,35 +784,10 @@
     <entry file="file://$PROJECT_DIR$/grails-app/assets/images/apple-touch-icon.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/UpdatePasswordService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails/grails-web-common/3.2.11/a587fc2fff2e73fbc664111c56f096d129be67be/grails-web-common-3.2.11-sources.jar!/grails/web/api/ServletAttributes.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Resources.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResourcesService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="39" column="61" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="61" />
-          <folding>
-            <element signature="e#27#66#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,13 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResetPasswordService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/users/resetNewPass.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -936,13 +855,6 @@
     <entry file="das://987eab5a-fb6a-48b5-bbe0-be61108c01a7/schema/LINKSHARING/table/SUBSCRIPTION.sql" />
     <entry file="file://$PROJECT_DIR$/grails-app/assets/images/1.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="27" column="182" selection-start-line="27" selection-start-column="182" selection-end-line="27" selection-end-column="182" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SearchController.groovy">
       <provider selected="true" editor-type-id="text-editor">
@@ -955,20 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="29" column="122" lean-forward="true" selection-start-line="29" selection-start-column="122" selection-end-line="29" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SearchService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/ResourcesController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -986,13 +884,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/LoginService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/users/updateUserProfile.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1003,19 +894,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Subscription.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+    <entry file="file://$PROJECT_DIR$/grails-app/views/users/userList.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="284">
+          <caret line="147" column="127" lean-forward="true" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="127" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Users.groovy">
-      <provider selected="true" editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UsersController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+          <folding>
+            <element signature="e#27#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SignupService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SearchService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/LoginService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResourcesService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding>
+            <element signature="e#27#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/ResetPasswordService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/UserListService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/UpdatePasswordService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/application.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="135" column="30" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="58" lean-forward="true" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="140" column="84" selection-start-line="140" selection-start-column="72" selection-end-line="140" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding>
+            <element signature="e#27#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Subscription.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1027,103 +1031,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/DashboardService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#27#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/application.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="135" column="35" lean-forward="true" selection-start-line="135" selection-start-column="35" selection-end-line="135" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="44" selection-start-line="99" selection-start-column="44" selection-end-line="99" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/topics/AllTopicsList.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="106" column="44" selection-start-line="106" selection-start-column="44" selection-end-line="106" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="202" column="54" lean-forward="true" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/users/userList.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="151" column="20" lean-forward="true" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionService.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Users.groovy">
+      <provider selected="true" editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/TopicsService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        <state relative-caret-position="380">
+          <caret line="74" column="32" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
           <folding>
             <element signature="e#27#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/UsersController.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/TopicsController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="87" column="27" selection-start-line="87" selection-start-column="27" selection-end-line="87" selection-end-column="27" />
+        <state relative-caret-position="419">
+          <caret line="67" column="57" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Resources.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/ResourcesController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="50" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="387" column="22" lean-forward="true" selection-start-line="361" selection-start-column="16" selection-end-line="387" selection-end-column="22" />
           <folding>
-            <element signature="e#27#60#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/UserListService.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/topics/ShowTopics.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="81">
+          <caret line="141" column="41" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#td#2;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#td#3;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#td#4;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#td#5;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5825#5832#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#9128#9135#1#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

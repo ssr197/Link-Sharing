@@ -4,7 +4,7 @@ class BootStrap {
 
     def init = { servletContext ->
 
-
+/*
         //    this code will add some some data to every table in databas. Commented because
         Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalin@gmail.com' )
         Users u2=new Users(username : 'Rishabh' , firstName : 'Rishabh'  , lastName : 'Gupta' , password : '123' , admin : false , active : true , email : 'rishabh@gmail.com')
@@ -98,6 +98,9 @@ class BootStrap {
         subs.save(flush:true,failOnError:true)
         sub.save(flush:true,failOnError:true)
         su.save(flush:true,failOnError:true)
+    */
+
+
     }
 
     def destroy = {

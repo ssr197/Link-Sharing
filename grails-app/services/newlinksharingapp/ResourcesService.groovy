@@ -33,12 +33,8 @@ class ResourcesService {
     def saveLinkMethod(params, request, email){
         Users u = Users.findByEmail(email)
         String userName = u.username
-
         String description = params.selectlink
         String tname = params.topic
-
-        println "This is topic name which is is recieved here"
-
         def tobj = Topics.findByName(tname)
         Integer tID = tobj.id
         String link = params.linkres

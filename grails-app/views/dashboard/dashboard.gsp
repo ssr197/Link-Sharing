@@ -164,21 +164,20 @@
                                 <div class="col-md-5">
 
                                     <!--subscription Modal-->
-                                        <div class="panel panel-default">
+                                        <div class="panel panel-default" style="overflow: auto; height: 400px">
                                             <div class="panel-heading">
                                                 <div style="float:left">Subscriptions</div>
                                                 <div style="float:right">@${userdata.username}</div><br>
                                             </div>
                                             <div class="panel-body">
                                                 <g:each in="${subscriptions}" var="us" status="i">
-                                                    <li>
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <asset:image src="${us.topic.createdBy.photo}" style="width:60px;height:60px"/>
                                                             </div>
                                                             <div class="col-sm-8">
                                                                 <div style="font-size:23px;">
-                                                                    <g:link controller="dashboard" action="dashboard" params="[id: us.id]">${us.topic.name}</g:link></div>
+                                                                    <g:link controller="topics" action="viewTopics" params="[id: us.id]">${us.topic.name}</g:link></div>
                                                                 <div>@${us.topic.createdBy.username}</div>
                                                                 <div class="col-sm-6">
                                                                     Subscriptions:
@@ -188,6 +187,7 @@
                                                                     <div><a>${resourcecount.get(i)}</a></div></div>
 
                                                     <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link></div></div>
+
 
                                                         <g:if test  = "${us.topic.createdBy.email==session.name}" >
                                                             <div class="row">
@@ -218,7 +218,6 @@
                                                                           value="${us.seriousness}" />
                                                             </g:form>
                                                         </g:else>
-                                                    </li>
                                                 </g:each>
 
                                             </div>
@@ -227,7 +226,7 @@
 
                                     %{--Trending topic List--}%
 
-                                    <div class="panel panel-default">
+                                    <div class="panel panel-default" style="overflow: auto; height: 500px">
                                         <div class="panel-heading">
                                             <div style="float:left">Trending Topics</div>
                                             <div style="float: right">@${userdata.username}</div><br>
@@ -235,7 +234,7 @@
                                         <div class="panel-body">
                                             <div class="card-horizontal">
                                                 <g:each in="${trending}" var="us" status="i">
-                                                    <li>
+                                                    %{--<li>--}%
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <img src="{us.createdBy.photo}"/></div>
@@ -260,7 +259,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </li>
+                                                    %{--</li>--}%
                                                 </g:each>
                                             </div>
                                         </div>
@@ -427,10 +426,6 @@
                 function display(){
                     document.getElementById("drop").style.display="block";
                 }
-
-                /*var resetTopicForm = function () {
-                    $(".topicForm").trigger("reset");
-                }*/
             </script>
     </body>
 </html>
