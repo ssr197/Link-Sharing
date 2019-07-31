@@ -7,10 +7,16 @@ class LoginService {
 
     def LoginMethod(Map params) {
         String emailOrUsername = params.l_email
+        Users x = Users.findByEmail(emailOrUsername)
         String loginPassword = params.l_pwd
         if(emailOrUsername == null){
             return null
-        } else {
+        }
+        if(!x.active){
+            return null
+        }
+
+        else {
             def fetchUser = Users.findByEmail(emailOrUsername)
             if(fetchUser == null){
                 return null

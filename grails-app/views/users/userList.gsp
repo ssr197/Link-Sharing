@@ -100,8 +100,8 @@
 
                 </td>
                 <td>
-                    <div class="dropdown">
-                        <button class="dropbtn">select</button>
+                    <div class="dropdown"style="float: right">
+                        <button class="dropbtn">${userdata.username}</button>
                         <g:if test="${userdata.admin}">
                             <div class="dropdown-content">
                                 <a href="/dashboard/dashboard">Back</a>
@@ -144,10 +144,16 @@
                 <td>${User.lastName}</td>
                 <td>${User.active}</td>
                 <td>
-                    <button type="button" onclick="">
-                        Activate/Deactivate
+                    <button class="btn btn-warning">
+                        <g:link action="changeAdminPermission" params="${[variable1: User.email]}">Activate/Deactivate</g:link>
                     </button>
+                </td>
+                <td>${User.admin}</td>
                 <td>
+                    <button class="btn btn-warning">
+                        <g:link action="makeAdmin" params="${[variable2: User.email]}">Admin/Normal</g:link>
+                    </button>
+                </td>
             </tr>
         </g:each>
 

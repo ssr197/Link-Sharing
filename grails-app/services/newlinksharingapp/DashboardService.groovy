@@ -141,10 +141,6 @@ class DashboardService {
         return xyz
     }
 
-
-    
-
-
     def topTopicSubs()
     {
         List<Long> topicsid = Topics.list().collect {
@@ -170,5 +166,6 @@ class DashboardService {
         else
             it.getAt(0) }
         return counts
+
     }
 }

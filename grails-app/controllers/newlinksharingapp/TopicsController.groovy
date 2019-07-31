@@ -13,9 +13,11 @@ def topicsService
         redirect(controller: "dashboard", action: "dashboard")
 
     }
+    def topicshow(){
 
-
-
-
-
+    }
+    def topicShow(){
+        List topicList = topicsService.showListMethod()
+        render(view: 'AllTopicsList', model: [topiclist: topicList])
+    }
 }

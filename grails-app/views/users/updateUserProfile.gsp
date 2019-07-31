@@ -22,6 +22,43 @@
             background: #5D5C61;
         }
         </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="4nonymous">
@@ -43,23 +80,44 @@
                             <div class="col-md-7">
                                 <table class="table">
 
-                                <div class="container col-md-10">
-                                    <br><br>
-                                </div>
-                                <div class="col-md-2">
-                                    <br>
-                                    <button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">select
-                                        <span class="caret" onclick="display()"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" id="drop">
-                                        <li><a href="/dashboard/dashboard">Back</a></li>
-                                        <li><a href="/users/showUserList">Users</a></li>
-                                        <li><a href="#">topic</a></li>
-                                        <li><a href="/users/logout">Logout</a></li>
-                                    </ul>
-                                </div>
+                                    <div class="container col-md-10">
+                                        <br><br>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <br>
 
+                                        <td width=30px>
+                                            <div class="dropdown" style="float: right">
+                                                <button class="btn btn-primary">Select</button>
+                                                <g:if test="${session.isAdmin}">
+                                                    <div class="dropdown-content">
+                                                        <a href="/dashboard/dashboard">Back</a>
+                                                        <a href="/users/showUserList">Users</a>
+                                                        <a href="#">topic</a>
+                                                        <a href="/users/logout">Logout</a>
+                                                    </div>
+                                                </g:if>
+                                                <g:else>
+                                                    <div class="dropdown-content">
+                                                        <a href="/users/openPageToChangeProfile">profile</a>
+                                                        %{--<a href="/users/showUserList">Users</a>--}%
+                                                        %{--<a href="#">topic</a>--}%
+                                                        <a href="/users/logout">Logout</a>
+                                                    </div>
+                                                </g:else>
+                                            </div>
+                                        </td>
 
+                                        %{--<button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">select
+                                            <span class="caret" onclick="display()"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" id="drop">
+                                            <li><a href="/dashboard/dashboard">Back</a></li>
+                                            <li><a href="/users/showUserList">Users</a></li>
+                                            <li><a href="#">topic</a></li>
+                                            <li><a href="/users/logout">Logout</a></li>
+                                        </ul>--}%
+                                    </div>
 
                                 </table>
                             </div>

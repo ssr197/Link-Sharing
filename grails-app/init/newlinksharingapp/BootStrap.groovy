@@ -4,13 +4,12 @@ class BootStrap {
 
     def init = { servletContext ->
 
-/*
 
         //    this code will add some some data to every table in databas. Commented because
-        Users u1=new Users(username : 'Saurabh' , firstName : 'saurabh'  , lastName : 'Kumar' , password : '123' , admin : false , active : true , email : 'saurabh@gmail.com' )
-        Users u2=new Users(username : 'b' , firstName : 'b'  , lastName : 'b' , password : '123' , admin : false , active : true , email : 'b@gmail.com')
-        Users u3=new Users(username : 'c' , firstName : 'c'  , lastName : 'c' , password : '123' , admin : false , active : true , email : 'c@gmail.com')
-        Users u4=new Users(username : 'd' , firstName : 'd'  , lastName : 'd' , password : '123' , admin : true  , active : true , email : 'd@gmail.com')
+        Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalin@gmail.com' )
+        Users u2=new Users(username : 'Rishabh' , firstName : 'Rishabh'  , lastName : 'Gupta' , password : '123' , admin : false , active : true , email : 'rishabh@gmail.com')
+        Users u3=new Users(username : 'Chaithra' , firstName : 'Chaithra'  , lastName : 'G S' , password : '123' , admin : false , active : true , email : 'chaithra@gmail.com')
+        Users u4=new Users(username : 'Saurabh' , firstName : 'Saurabh'  , lastName : 'Kumar' , password : '123' , admin : true  , active : true , email : 'saurabh@gmail.com')
 
         u1.save(flush:true,failOnError:true)
 
@@ -38,8 +37,8 @@ class BootStrap {
 
         Resources resource1 = new Resources(description:"Resource-1 and some random texts here",topic:topic1)
         Resources resource2 = new Resources(description:"Resource-2 and some random texts here",topic:topic1)
-        Resources resource3 = new Resources(description:"Resource-2 and some random texts here",topic:topic2)
-        Resources resource4 = new Resources(description:"Resource-2 and some random texts here",topic:topic3)
+        Resources resource3 = new Resources(description:"Resource-3 and some random texts here",topic:topic2)
+        Resources resource4 = new Resources(description:"Resource-4 and some random texts here",topic:topic3)
         u4.addToResource(resource1)
 
         u4.addToResource(resource2)
@@ -99,10 +98,6 @@ class BootStrap {
         subs.save(flush:true,failOnError:true)
         sub.save(flush:true,failOnError:true)
         su.save(flush:true,failOnError:true)
- */
-
-
-
     }
 
     def destroy = {

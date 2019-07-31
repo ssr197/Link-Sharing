@@ -26,6 +26,9 @@ class UsersController {
        Users loginValue = loginService.LoginMethod(params)
         if(loginValue) {
             session.name = loginValue.email
+            session.username = loginValue.username
+            Users x = Users.findByEmail(session.name)
+            session.isAdmin = x.admin
             redirect(controller: 'dashboard', action: 'dashboard')
         }
         else {
@@ -43,9 +46,7 @@ class UsersController {
     //Show the list of all the users available
     def showUserList(){
         List<User> listAll = userListService.AllUsers();
-        println "the session here in userController is" + session.name
         Users u1 = Users.findByEmail(session.name)
-        //redirect(view: "userList", model:[allUserList:listAll, userdata:u1])
         render(view: "userList", model: [allUserList:listAll,userdata:u1])
 
     }
@@ -83,12 +84,14 @@ class UsersController {
     }
 
     def changeAdminPermission(){
-        Users u = Users.findByEmail(session.name)
-        if(u.admin = false) {
-            u.admin = true
-        }
+        String key = params.variable1
+        userListService.changerPermission(key)
+        redirect(controller: "users", action: "showUserList")
     }
 
-
-
+    def makeAdmin(){
+        String key = params.variable2
+        userListService.adminMethod(key)
+        redirect(controller: "users", action: "showUserList")
+    }
 }

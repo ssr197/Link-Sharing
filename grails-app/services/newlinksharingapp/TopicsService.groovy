@@ -25,12 +25,14 @@ class TopicsService {
         u2.addToSubscribedTo(sub)
         t2.addToSubscribedTo(sub)
         if (sub.validate()) {
-//            print 'Validated*****************************'
             sub.save(failOnError: true, flush: true)
         } else {
-//            print 'Validation Failed by shalin1*****************************'
             print sub.errors.getAllErrors()
         }
 
+    }
+    def showListMethod(){
+        List<Topics> topicList = Topics.list()
+        return topicList
     }
 }

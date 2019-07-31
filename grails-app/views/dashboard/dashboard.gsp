@@ -109,7 +109,7 @@
                                                 <div class="dropdown-content">
                                                     <a href="/users/openPageToChangeProfile">profile</a>
                                                     <a href="/users/showUserList">Users</a>
-                                                    <a href="#">topic</a>
+                                                    <a href="/topics/topicShow">topic</a>
                                                     <a href="/users/logout">Logout</a>
                                                 </div>
                                             </g:if>
@@ -177,7 +177,8 @@
                                                                 <asset:image src="${us.topic.createdBy.photo}" style="width:60px;height:60px"/>
                                                             </div>
                                                             <div class="col-sm-8">
-                                                                <div style="font-size:23px;"><g:link controller="dashboard" action="index" params="[id: us.id]">${us.topic.name}</g:link></div>
+                                                                <div style="font-size:23px;">
+                                                                    <g:link controller="dashboard" action="dashboard" params="[id: us.id]">${us.topic.name}</g:link></div>
                                                                 <div>@${us.topic.createdBy.username}</div>
                                                                 <div class="col-sm-6">
                                                                     Subscriptions:
@@ -185,7 +186,9 @@
                                                                 <div class="col-sm-6">
                                                                     Posts:
                                                                     <div><a>${resourcecount.get(i)}</a></div></div>
-                                                                <a>Unsubscribe</a></div></div>
+
+                                                    <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link></div></div>
+
                                                         <g:if test  = "${us.topic.createdBy.email==session.name}" >
                                                             <div class="row">
                                                                 <div class="col-md-12">
@@ -198,8 +201,8 @@
                                                                             </g:form>
                                                                         </li>
                                                                         <li>
-                                                                            <g:form controller="topic" action="updateVisibility">
-                                                                                <g:field type="hidden" name="id" value="${us.topicId}"></g:field>
+                                                                            <g:form controller="subscriptions" action="updateVisibility">
+                                                                                <g:field type="hidden" name="id1" value="${us.topicId}"></g:field>
                                                                                 <g:select onChange="submit()" name="visibility" from="${['PUBLIC','PRIVATE']}"
                                                                                           value="${us.topic.visibility}" />
                                                                             </g:form>
@@ -227,7 +230,7 @@
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <div style="float:left">Trending Topics</div>
-                                            <div style="float: right">${userdata.username}</div><br>
+                                            <div style="float: right">@${userdata.username}</div><br>
                                         </div>
                                         <div class="panel-body">
                                             <div class="card-horizontal">
@@ -238,8 +241,16 @@
                                                                 <img src="{us.createdBy.photo}"/></div>
                                                             <div class="col-sm-8">
                                                                 <div style="font-size:23px;"><b>${us.name}</b></div>
-                                                                <div>@${us.createdBy.username}</div>
-                                                                <div><a>Unsubscribe</a></div>
+                                                                <div>
+                                                                    <g:if test="${us.createdBy.email==session.name}">
+                                                                        <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
+                                                                    </g:if>
+
+                                                                    <g:else>
+                                                                        <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
+                                                                    </g:else>
+                                                                        @${us.createdBy.username}
+                                                                </div>
                                                                 <div class="col-sm-6">
                                                                     Subscriptions:
                                                                     <div>${subs1.get(i)}</div></div>
@@ -409,7 +420,6 @@
                     </div>
                 </div>
             </div>
-
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -418,9 +428,9 @@
                     document.getElementById("drop").style.display="block";
                 }
 
-                var resetTopicForm = function () {
+                /*var resetTopicForm = function () {
                     $(".topicForm").trigger("reset");
-                }
+                }*/
             </script>
     </body>
 </html>
