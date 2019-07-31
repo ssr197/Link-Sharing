@@ -60,7 +60,7 @@ class UsersController {
     def validateResetPasswordEmail(){
 
         if(resetPasswordService.validateEmail(params)==1){
-            session.name = params.fetchEmail
+            session.name = params.email
             render(view: 'resetNewPass')
         }else{
             render view: "login"

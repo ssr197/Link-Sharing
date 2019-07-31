@@ -7,7 +7,7 @@ class ResetPasswordService {
 
 
     def validateEmail(Map params) {
-        String email = params.fetchEmail
+        String email = params.email
         Users userExists = Users.findByEmail(email)
 
         if(userExists) {
@@ -45,7 +45,6 @@ class ResetPasswordService {
             u1.lastName = lastName
             u1.save(failOnError: true, flush: true)
         }
-
     }
 }
 

@@ -4,12 +4,11 @@ class BootStrap {
 
     def init = { servletContext ->
 
-/*
         //    this code will add some some data to every table in databas. Commented because
-        Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalin@gmail.com' )
+        Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalinprasad24@gmail.com' )
         Users u2=new Users(username : 'Rishabh' , firstName : 'Rishabh'  , lastName : 'Gupta' , password : '123' , admin : false , active : true , email : 'rishabh@gmail.com')
         Users u3=new Users(username : 'Chaithra' , firstName : 'Chaithra'  , lastName : 'G S' , password : '123' , admin : false , active : true , email : 'chaithra@gmail.com')
-        Users u4=new Users(username : 'Saurabh' , firstName : 'Saurabh'  , lastName : 'Kumar' , password : '123' , admin : true  , active : true , email : 'saurabh@gmail.com')
+        Users u4=new Users(username : 'Saurabh' , firstName : 'Saurabh'  , lastName : 'Kumar' , password : '123' , admin : true  , active : true , email : 'saurabh50197@gmail.com')
 
         u1.save(flush:true,failOnError:true)
 
@@ -98,7 +97,6 @@ class BootStrap {
         subs.save(flush:true,failOnError:true)
         sub.save(flush:true,failOnError:true)
         su.save(flush:true,failOnError:true)
-    */
 
 
     }
