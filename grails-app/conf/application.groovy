@@ -1,7 +1,5 @@
 grails {
 
-
-
     profile = 'web'
     codegen {
         defaultPackage = 'sample'

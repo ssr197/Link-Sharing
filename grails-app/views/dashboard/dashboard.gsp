@@ -74,22 +74,22 @@
                                         </g:form>
                                     </td>
                                     <td width=20px style="text-align:center;">
-                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#topicModal">
+                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" title="New Topic" data-target="#topicModal">
                                             <i class="material-icons">chat_bubble_outline</i>
                                         </button>
                                     </td>
                                     <td width=20px style="text-align:center;">
-                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#invite">
+                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" title="Send Invite" data-target="#invite">
                                             <i class="material-icons">mail_outline</i>
                                         </button>
                                     </td>
                                     <td width=20px>
-                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#uploadLink">
+                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" title="Upload Link" data-target="#uploadLink">
                                             <i class="material-icons" style="text-align:center;">attach_file</i>
                                         </button>
                                     </td>
                                     <td width=20px>
-                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" data-target="#uploadDocument">
+                                        <button type="button" class="btn btn-info btn-warning" data-toggle="modal" title="Upload Document" data-target="#uploadDocument">
                                             <i class="material-icons" style="text-align:center;">description</i>
                                         </button>
                                     </td>
@@ -242,11 +242,13 @@
                                                                 <div style="font-size:23px;"><b>${us.name}</b></div>
                                                                 <div>
                                                                     <g:if test="${us.createdBy.email==session.name}">
-                                                                        <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
+                                                                        %{--<g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>--}%
+                                                                        <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
                                                                     </g:if>
 
                                                                     <g:else>
-                                                                        <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
+                                                                        %{--<g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>--}%
+                                                                        <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
                                                                     </g:else>
                                                                         @${us.createdBy.username}
                                                                 </div>

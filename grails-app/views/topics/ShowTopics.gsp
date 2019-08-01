@@ -34,7 +34,7 @@
             <div class="panel-body">
                 <div class="container col-md-12" style="background: #31b0d5">
                     <div class="col-md-5">
-                        <h2 style="color: #a60000"><g:link controller="dashboard" action="index"><strong> <u><b>Link Sharing</b></u></strong></g:link></h2>
+                        <h2 style="color: #a60000"><g:link controller="dashboard" action="dashboard"><strong> <u><b>Link Sharing</b></u></strong></g:link></h2>
                     </div>
                     <div class="col-md-7">
                         <table class="table">
@@ -91,9 +91,9 @@
                                             </div>
                                         </g:if>
                                         <g:else>
-                                            <div class="dropdown-content">
-                                                <a href="/users/openPageToChangeProfile">profile</a>
-                                                <a href="/users/logout">Logout</a>
+                                            <li class="dropdown-content">
+                                                <li><a href="/users/openPageToChangeProfile">profile</a></li>
+                                                <li><a href="/users/logout">Logout</a></li>
                                             </div>
                                         </g:else>
                                     </ul>
@@ -166,41 +166,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-    %{--<div class="modal fade"  id="resource" role="dialog">
-        <div class="modal-dialog">
-            <!-- topic Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Share Document</h4>
-                </div>
-                <div class="modal-body">
-                    <g:uploadForm  controller="Resources" action="saveDocument" class="topicForm">
-                        Document *:
-                        <input type="file" class="form-control" id="doc" placeholder="choose" name="document">
-                        <br>
-                        Description *:
-                        <textarea class="form-control" id="select" name="select"></textarea>
-                        <br>
-                        <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
-                        <br>
-                        <br>
-                        <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
-
-                    </g:uploadForm>
-                </div>
-                <div class="modal-footer" style=" margin-top: 15px;">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>--}%
 
 %{--Send Invite--}%
     <div class="modal fade" id="invite" role="dialog">
@@ -329,7 +294,7 @@
                                 Topics:
                                 <div><a>${postscount.getAt(i)}</a></div></div>
 
-                            <a>Unsubscribe</a></div></div>
+                            %{--<a>Unsubscribe</a>--}%</div></div>
                     <br>
                 </g:each>
             </div>
@@ -359,30 +324,27 @@
                     </div>
 
                     <div class="col-md-8">${res.description}<br>
-                    <div class="row">
-                    <div class="col-md-4">
-                        <g:if test="${res instanceof newlinksharingapp.LinkResource}">
-                            <a>Download</a>
-                            </div>
+                        <div class="row">
                             <div class="col-md-4">
+                                <g:if test="${res instanceof newlinksharingapp.LinkResource}">
+                                    <a href="${res.url}">Open Link</a>
+                                    </div>
+                                    <div class="col-md-4">
 
-                                <a href="${res.url}">View Full Site</a>
-                            </div>
-                        </g:if>
-                        <g:else>
-                            <g:link controller="Document" action="download" params="[id:res.id , tid:subs.id]" >Download</g:link></div>
-                            <div class="col-md-4">
-                                <a href="${}">View Full Site</a>
-                            </div>
-                        </g:else>
+                                    </div>
+                                </g:if>
+                                <g:else>
+                                    <g:link controller="resources" action="downloadFile" params="[id:res.id , tid:subs.id]" >Download</g:link></div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </g:else>
 
-                        <div class="col-md-3">
-                            <g:link controller="Resource" action="index" params="[id:res.id]" >View post</g:link>
+                                <div class="col-md-3">
+                                    <g:link controller="Resource" action="index" params="[id:res.id]" >View post</g:link>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                </div>
                 </br>
             </g:each>
         </div>
