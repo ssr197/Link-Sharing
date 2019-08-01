@@ -127,10 +127,10 @@
                                         <button class="btn btn-primary">${userdata.username}</button>
                                         <g:if test="${userdata.admin}">
                                             <div class="dropdown-content">
-                                                <a href="/users/openPageToChangeProfile">profile</a>
-                                                <a href="/users/showUserList">Users</a>
-                                                <a href="/topics/topicShow">topic</a>
-                                                <a href="/users/logout">Logout</a>
+                                                <a href="/users/openPageToChangeProfile">profile</a></li>
+                                                <a href="/users/showUserList">Users</a></li>
+                                                <a href="/topics/topicShow">topic</a></li>
+                                                <a href="/users/logout">Logout</a></li>
                                             </div>
                                         </g:if>
                                         <g:else>

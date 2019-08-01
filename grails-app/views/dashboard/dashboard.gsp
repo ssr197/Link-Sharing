@@ -239,15 +239,16 @@
                                                             <div class="col-sm-8">
                                                                 <div style="font-size:23px;"><b>${us.name}</b></div>
                                                                 <div>
-                                                                    %{--<g:if test="${!aa.contains(us)}">
-                                                                        <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
-                                                                    </g:if>--}%
+
+
                                                                     <g:if test="${us.createdBy.email==session.name}">
-                                                                        <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
+                                                                        %{--<g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>--}%
                                                                         <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
                                                                     </g:if>
+
                                                                     <g:else>
                                                                         <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
+                                                                        %{--<g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>--}%
                                                                     </g:else>
                                                                         @${us.createdBy.username}
                                                                 </div>
@@ -282,34 +283,32 @@
                             <g:each in="${resources}" var="res" status="i">%{--<div class="row">--}%
                                 <div class="col-md-4"><asset:image src="${res.createdBy.photo}"  style="width:70px;height:70px; float: left"/></div>
                                 <div class="col-sm-8">
-                                    <div class="row"><h3><a class=col-sm-3>${res.topic.name}</a></h3><p>@${res.createdBy.username}</p></div>
+                                    <div class="row"><h3><a class=col-sm-3>${res.topic.name}</a></h3><br><p>@${res.createdBy.username}</p></div>
                                     <div class="row">${res.description}</div><br>
                                     <div class="row">
                                         <table>
-%{--                                            <div class="col-md-3">--}%
-                                                <td width="250px">
+                                            <div class="col-md-3">
+                                                <td width="200px"style="color: #2b542c">
                                                     <div>
-                                                        <g:if test="${res instanceof newlinksharingapp.DocumentResource}">
-                                                            <g:link controller="Document" action="download" params="[id:res.id , tid:res.id , flag:1]">Download</g:link>
-                                                        </g:if>
-                                                        <g:if test="${res instanceof newlinksharingapp.LinkResource}">
+                                                        <g:if test="${res.hasProperty("filePath")}">
+                                                            <g:link controller="resources" action="downloadFile" params="[id:res.id , tid:res.id , flag:1]">Download</g:link>
                                                         </g:if>
                                                         <g:else>
                                                             <a href="${res.url}">Open Link</a>
                                                         </g:else>
                                                     </div>
                                                 </td>
-                                                <td width="250px">
+                                                <td width="250px" style="color: #761c19">
                                                     <div>
                                                         <g:link controller="dashboard" action="markAsRead" params="[id:res.id, email:res.createdBy.email]">Mark as read</g:link>
                                                     </div>
                                                 </td>
-                                                <td width="250px">
+                                                <td width="250px" style="color: #2b542c;">
                                                     <div>
                                                         <g:link controller="resources" action="index" params="[id: res.id]">View post</g:link>
                                                     </div>
                                                 </td>
-%{--                                            </div>--}%
+                                            </div>
                                         </table>
                                     </div><hr>
                                 </div>

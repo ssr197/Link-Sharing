@@ -11,9 +11,6 @@ class DashboardController {
         Integer topicCount = dashboardService.totalTopicCount(session.name)
         Integer subsCount = dashboardService.sCount(session.name)
         List  subscriptionLt = dashboardService.subscriptions(session.name)
-        List aa=subscriptionLt.collect{
-            it.topic
-        }
         if(!subscriptionLt)
         {
             List trending = dashboardService.trendtopics()
@@ -33,8 +30,7 @@ class DashboardController {
                                                trending : trending,
                                                topic1 : topic1,
                                                subs1: subs1,
-                                               resources:resources,
-                                                aa:aa])
+                                               resources:resources])
         }
         else{
             List topicList = subscriptionLt*.topic
@@ -60,9 +56,7 @@ class DashboardController {
                                                 trending : trending,
                                                 topic1 : topic1,
                                                 subs1: subs1,
-                                               resources:resources,
-            ]
-            )
+                                               resources:resources,])
         }
     }
 

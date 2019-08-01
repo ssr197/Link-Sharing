@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19314725-6f76-426d-9dc0-45a47776efc7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/grails-app/conf/application.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/conf/application.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/init/newlinksharingapp/BootStrap.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grails-app/views/resources/showPostAndRate.gsp" beforeDir="false" afterPath="$PROJECT_DIR$/grails-app/views/resources/showPostAndRate.gsp" afterDir="false" />
     </list>
@@ -71,11 +68,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/resources/showPostAndRate.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="131" column="85" lean-forward="true" selection-start-line="131" selection-start-column="85" selection-end-line="131" selection-end-column="85" />
-              <caret line="130" column="87" lean-forward="true" selection-start-line="130" selection-start-column="87" selection-end-line="130" selection-end-column="87" />
-              <caret line="129" column="100" lean-forward="true" selection-start-line="129" selection-start-column="100" selection-end-line="129" selection-end-column="100" />
-              <caret line="132" column="82" lean-forward="true" selection-start-line="132" selection-start-column="82" selection-end-line="132" selection-end-column="82" />
+            <state relative-caret-position="-480">
+              <caret line="131" column="90" lean-forward="true" selection-start-line="131" selection-start-column="90" selection-end-line="131" selection-end-column="90" />
+              <caret line="130" column="92" lean-forward="true" selection-start-line="130" selection-start-column="92" selection-end-line="130" selection-end-column="92" />
+              <caret line="129" column="105" lean-forward="true" selection-start-line="129" selection-start-column="105" selection-end-line="129" selection-end-column="105" />
+              <caret line="132" column="87" lean-forward="true" selection-start-line="132" selection-start-column="87" selection-end-line="132" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -83,8 +80,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="247" column="75" selection-start-line="243" selection-start-column="79" selection-end-line="247" selection-end-column="75" />
+            <state relative-caret-position="392">
+              <caret line="305" column="87" selection-start-line="305" selection-start-column="87" selection-end-line="305" selection-end-column="87" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#div#0;n#table#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#div#0;n#table#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Resources.groovy">
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -92,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="870">
+              <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -129,7 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>page</find>
       <find>dashboard</find>
       <find>subscrib</find>
       <find>selection</find>
@@ -159,6 +178,7 @@
       <find>PUBLIC</find>
       <find>download</find>
       <find>trending</find>
+      <find>url</find>
     </findStrings>
     <replaceStrings>
       <replace>signupForm</replace>
@@ -429,12 +449,12 @@
       <workItem from="1564171584738" duration="19437000" />
       <workItem from="1564301562429" duration="87654000" />
       <workItem from="1564548332321" duration="35879000" />
-      <workItem from="1564596066295" duration="35445000" />
+      <workItem from="1564596066295" duration="37593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336140000" />
+    <option name="totallyTimeSpent" value="338288000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -984,25 +1004,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Resources.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/newlinksharingapp/SubscriptionService.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1065,16 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/resources/showPostAndRate.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="131" column="85" lean-forward="true" selection-start-line="131" selection-start-column="85" selection-end-line="131" selection-end-column="85" />
-          <caret line="130" column="87" lean-forward="true" selection-start-line="130" selection-start-column="87" selection-end-line="130" selection-end-column="87" />
-          <caret line="129" column="100" lean-forward="true" selection-start-line="129" selection-start-column="100" selection-end-line="129" selection-end-column="100" />
-          <caret line="132" column="82" lean-forward="true" selection-start-line="132" selection-start-column="82" selection-end-line="132" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Users.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1099,17 +1094,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/resources/showPostAndRate.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="131" column="90" lean-forward="true" selection-start-line="131" selection-start-column="90" selection-end-line="131" selection-end-column="90" />
+          <caret line="130" column="92" lean-forward="true" selection-start-line="130" selection-start-column="92" selection-end-line="130" selection-end-column="92" />
+          <caret line="129" column="105" lean-forward="true" selection-start-line="129" selection-start-column="105" selection-end-line="129" selection-end-column="105" />
+          <caret line="132" column="87" lean-forward="true" selection-start-line="132" selection-start-column="87" selection-end-line="132" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/DashboardController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="870">
+          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/newlinksharingapp/SubscriptionsController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/newlinksharingapp/Resources.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="247" column="75" selection-start-line="243" selection-start-column="79" selection-end-line="247" selection-end-column="75" />
+        <state relative-caret-position="392">
+          <caret line="305" column="87" selection-start-line="305" selection-start-column="87" selection-end-line="305" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#div#0;n#table#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#div#0;n#table#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
