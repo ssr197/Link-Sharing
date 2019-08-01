@@ -60,7 +60,6 @@ class DashboardService {
                     projections{
                         count('topic.id')
                         groupProperty('topic.id')
-                        // countDistinct('topic.id')
                     }
                     'topic'{
                         inList('id',topicids)

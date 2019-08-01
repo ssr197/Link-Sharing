@@ -4,6 +4,7 @@ import grails.artefact.Controller
 
 class ResourcesController {
     def resourcesService
+    def dashboardService
 
     def saveDocument() {
         String email = session.name
@@ -40,19 +41,21 @@ class ResourcesController {
         }
     }
 
-    def viewLink(){
-        if(!session.name){
-            render("Please login first")
-        }
-        else{
-
-
-
-        }
+    def deletePost() {
     }
 
-    def deletePost(){
 
+    def index() {
+        if (!session.name) {
+            render("Login reqired")
+        } else {
+            Resources res = Resources.get(params.id)
+            List trending = dashboardService.trendtopics()
+            List trending1 = trending.collect { it.id }
+            Users user = Users.findByEmail(session.name)
+            List subcount = dashboardService.subscriptioncount(trending1)
+            List postcount = dashboardService.postscount(trending1)
+            render(view: "showPostAndRate", model: [resource: res, trending: trending, countforsubs: subcount, countforposts: postcount, userdata:user])
+        }
     }
-
 }

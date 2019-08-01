@@ -320,7 +320,6 @@
             <g:each in="${resources}" var="res" status="i">
                 <div class="row">
                     <div class="col-md-12">
-                        %{--<asset:image src="${userdata.photo}" style="width:60px;height:60px"/>--}%
                     </div>
 
                     <div class="col-md-8">${res.description}<br>
@@ -340,7 +339,7 @@
                                 </g:else>
 
                                 <div class="col-md-3">
-                                    <g:link controller="Resource" action="index" params="[id:res.id]" >View post</g:link>
+                                    <g:link controller="resources" action="index" params="[id:res.id]" >View post</g:link>
                                 </div>
                             </div>
                         </div>
