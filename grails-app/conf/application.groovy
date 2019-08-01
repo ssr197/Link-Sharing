@@ -139,7 +139,6 @@ dataSource {
     driverClassName = 'oracle.jdbc.OracleDriver'
     dialect = "org.hibernate.dialect.Oracle10gDialect"
     properties = oracleProperties
-
 }
 
 environments {

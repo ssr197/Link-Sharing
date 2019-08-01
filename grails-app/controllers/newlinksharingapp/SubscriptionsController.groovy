@@ -9,9 +9,6 @@ class SubscriptionsController {
 
     }
     def updateVisibility(){
-
-        //println "the visibility what we got here is "+ params.id1
-
         subscriptionService.visibility(params)
         redirect(controller: "dashboard", action: "dashboard")
     }

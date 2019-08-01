@@ -30,6 +30,47 @@
         }
         </style>
 
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #ddd;}
+
+        .dropdown:hover .dropdown-content {display: block;}
+
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+
+
     </head>
 
     <body>
@@ -83,7 +124,7 @@
                                 </td>
                                 <td width=30px>
                                     <div class="dropdown">
-                                        <button class="btn btn-primary">Select</button>
+                                        <button class="btn btn-primary">${userdata.username}</button>
                                         <g:if test="${userdata.admin}">
                                             <div class="dropdown-content">
                                                 <a href="/users/openPageToChangeProfile">profile</a>
@@ -94,8 +135,8 @@
                                         </g:if>
                                         <g:else>
                                             <div class="dropdown-content">
-                                                <a href="/users/openPageToChangeProfile">profile</a>
-                                                <a href="/users/logout">Logout</a>
+                                                <li><a href="/users/openPageToChangeProfile">profile</a></li>
+                                                <li><a href="/users/logout">Logout</a></li>
                                             </div>
                                         </g:else>
                                     </div>
@@ -105,91 +146,6 @@
                     </div>
                 </div>
             </div>
-
-            %{--Upload Link--}%
-            <div class="modal fade"  id="uploadLink" role="dialog">
-                %{--<div class="modal-dialog">
-                    <!-- Upload Link content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Share Link</h4>
-                        </div>
-                        <div class="modal-body">
-                            <g:uploadForm  controller="resources" action="saveLink" class="topicForm">
-                                Link *:
-                                <input type="text" class="form-control" id="linkres" placeholder="Link" name="linkres">
-                                <br>
-                                Description *:
-                                <textarea class="form-control" id="selectlink" name="selectlink"></textarea>
-                                <br>
-                                <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
-                                <br><br>
-                                <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                            </g:uploadForm>
-                        </div>
-                        <div class="modal-footer" style=" margin-top: 15px;">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>--}%
-            </div>
-
-            %{--THIS IS SHARE DOCUMENT MODEL--}%
-            <div class="modal fade"  id="uploadDocument" role="dialog">
-                %{--<div class="modal-dialog">
-                    <!-- Upload Document content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Share Document</h4>
-                        </div>
-                        <div class="modal-body">
-                            <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">
-                                Document *:
-                                <input type="file" class="form-control" id="doc" placeholder="choose" name="document">
-                                <br>
-                                Description *:
-                                <textarea class="form-control" id="select" name="select"></textarea>
-                                <br>
-                                <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topics" from="${subscriptions.topic.name}"  optionValue="value" />
-                                <br><br>
-                                <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                            </g:uploadForm>
-                        </div>
-                        <div class="modal-footer" style=" margin-top: 15px;">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>--}%
-            </div>
-
-            %{--CREATE TOPIC MODEL--}%
-            <div class="modal fade" id="topicModal" role="dialog">
-                %{--<div class="modal-dialog">
-                    <!-- topic Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Create Topic</h4>
-                        </div>
-                        <div class="modal-body">
-                            <g:form controller="topics" action="addTopics" class="topicForm">
-                                Name *:
-                                <input class="form-control" type="text" name="topicName"/>
-                                Visibility *:
-                                <select class="form-control" name="selection">
-                                    <option>PUBLIC</option>
-                                    <option>PRIVATE</option>
-                                </select>
-                                <input type="submit" class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                            </g:form>
-                        </div>
-                        <div class="modal-footer" style=" margin-top: 15px;">
-                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>--}%
             </div>
 
             %{--Above this is DashBoard Setting--}%
@@ -221,19 +177,25 @@
                                     </div>
                                 </div><br><br><br>
                                 <p id="test"></p>
-                                <div class="row">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-2">
+                                <div class="row col-md-8">
+                                    <div>
                                         <g:if test="${resource.createdBy.email==session.name}">
-                                            <div><g:link controller="resource" action="delete" params="[id:resource.id]">Delete</g:link></div>
-                                            <div class="col-md-2"><a>Edit</a></div>
+                                            <div class="col-md-4"><g:link controller="dashboard" action="deletePost" params="[id:resource.id]">Delete</g:link></div>
+                                            <div class="col-md-4"><g:link controller="resource" action="delete" params="[id:resource.id]">  Edit</g:link></div>
                                         </g:if>
                                         <g:else>
-                                            <div><a>Delete</a></div>
-                                            <div class="col-md-2"><a>Edit</a></div>
+                                            <div class="col-md-4">Delete</div>
+                                            <div class="col-md-4">Edit</div>
                                         </g:else>
                                     </div>
-                                    <div class="col-md-2"><g:link controller="Document" action="download" params="[id:resource.id]">Download</g:link></div>
+                                    <div class="col-md-4">
+                                        <g:if test="${resource instanceof newlinksharingapp.DocumentResource}">
+                                            <g:link controller="resources" action="downloadFile" params="[id:resource.id]">Download</g:link>
+                                        </g:if>
+                                        <g:else>
+                                            <a href="${resource.url}">Open Link</a>
+                                        </g:else>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -244,7 +206,6 @@
                         </div>
                         <div class="panel-body">
                             <g:each in="${trending}" var="us" status="i">
-
                                     <div class="row">
                                         <div class="col-md-4">
                                             <asset:image src="${us.createdBy.photo}"  style="width:70px;height:70px"/></div>
@@ -254,52 +215,17 @@
                                             <div>@${us.createdBy.username}</div>
                                             <div class="col-sm-6">
                                                 Subscriptions:<br>${countforsubs.getAt(i)}
-                                                %{--<div>${countforsubs.getAt(i)}</div>--}%
                                             </div>
                                             <div class="col-sm-6">
                                                 Posts:<br>${countforposts.getAt(i)}
-                                                %{--<div><a>${countforposts.getAt(i)}</a></div>--}%
                                             </div><br><br><hr>
                                         </div>
-                                        %{--<a>subscribe</a>--}%
                                     </div>
-
                             </g:each>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-%{--
-        <script>
-            function Rating(username , resourceId , value) {
-                console.log("inside")
-                for(var i=1;i<=5;i++) {
-                    document.getElementById(i).style.color="black";
-                }
-                for(var i=1;i<=value;i++) {
-                    document.getElementById(i).style.color="red";
-                }
-                console.log("above ajax")
-                $.ajax({
-                    "url":     url,
-                    "type":    "get",
-                    "data":    {username : username , resourceId : resourceId , value : value},
-                    success: function(resp){
-                        document.getElementById("test").innerHTML=resp.success
-                    }
-                });
-            }
-            function Ratingsprint(value) {
-                for(var i=1;i<=5;i++) {
-                    document.getElementById(i).style.color="black";
-                }
-                for(var i=1;i<=value;i++) {
-                    document.getElementById(i).style.color="orange";
-                }
-            }
-        </script>
-            --}%
     </body>
 </html>
