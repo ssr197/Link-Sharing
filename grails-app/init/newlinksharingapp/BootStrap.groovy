@@ -3,9 +3,10 @@ package newlinksharingapp
 class BootStrap {
 
     def init = { servletContext ->
+/*
 
         //    this code will add some some data to every table in databas. Commented because
-        /*Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalinprasad24@gmail.com' )
+        Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalinprasad24@gmail.com' )
         Users u2=new Users(username : 'Rishabh' , firstName : 'Rishabh'  , lastName : 'Gupta' , password : '123' , admin : false , active : true , email : 'rishabh@gmail.com')
         Users u3=new Users(username : 'Chaithra' , firstName : 'Chaithra'  , lastName : 'G S' , password : '123' , admin : false , active : true , email : 'chaithra@gmail.com')
         Users u4=new Users(username : 'Saurabh' , firstName : 'Saurabh'  , lastName : 'Kumar' , password : '123' , admin : true  , active : true , email : 'saurabh50197@gmail.com')
@@ -96,14 +97,11 @@ class BootStrap {
         s5.save(flush:true,failOnError:true)
         subs.save(flush:true,failOnError:true)
         sub.save(flush:true,failOnError:true)
-        su.save(flush:true,failOnError:true)*/
-
-
-
-
+        su.save(flush:true,failOnError:true)
+*/
 
         //This is another part of the same
-        /*Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalinprasad24@gmail.com' )
+        Users u1=new Users(username : 'Shalin' , firstName : 'Shalin'  , lastName : 'Prasad' , password : '123' , admin : false , active : true , email : 'shalinprasad24@gmail.com' )
         Users u2=new Users(username : 'Rishabh' , firstName : 'Rishabh'  , lastName : 'Gupta' , password : '123' , admin : false , active : true , email : 'rishabh@gmail.com')
         Users u3=new Users(username : 'Chaithra' , firstName : 'Chaithra'  , lastName : 'G S' , password : '123' , admin : false , active : true , email : 'chaithra@gmail.com')
         Users u4=new Users(username : 'Saurabh' , firstName : 'Saurabh'  , lastName : 'Kumar' , password : '123' , admin : true  , active : true , email : 'saurabh50197@gmail.com')
@@ -132,10 +130,10 @@ class BootStrap {
         u2.save(flush:true,failOnError: true)
         topic12.save(flush:true,failOnError: true)
 
-        LinkResource resource1 = new LinkResource(description:"Resource-1 and some random texts here",topic:topic1)
-        LinkResource resource2 = new LinkResource(description:"Resource-2 and some random texts here",topic:topic1)
-        LinkResource resource3 = new LinkResource(description:"Resource-3 and some random texts here",topic:topic2)
-        LinkResource resource4 = new LinkResource(description:"Resource-4 and some random texts here",topic:topic3)
+        LinkResource resource1 = new LinkResource(description:"facebook link-1 as description.",topic:topic1, url: "https//:www.facebook.com")
+        LinkResource resource2 = new LinkResource(description:"facebook link-2 as description.",topic:topic1, url: "https//:www.facebook.com")
+        LinkResource resource3 = new LinkResource(description:"facebook link-3 as description.",topic:topic2, url: "https//:www.facebook.com")
+        LinkResource resource4 = new LinkResource(description:"facebook link-4 as description.",topic:topic3, url: "https//:www.facebook.com")
 
         u4.addToResource(resource1)
         u4.addToResource(resource2)
@@ -194,7 +192,6 @@ class BootStrap {
         subs.save(flush:true,failOnError:true)
         sub.save(flush:true,failOnError:true)
         su.save(flush:true,failOnError:true)
-*/
     }
 
     def destroy = {

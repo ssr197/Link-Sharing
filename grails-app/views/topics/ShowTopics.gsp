@@ -226,36 +226,32 @@
     </div>
 
     <div class="col-md-5">
-
         <div class="panel panel-default" style="overflow: auto;height: 200px">
             <div class="panel-heading">${subs.topic.name}</div>
-
             <div class="panel-body">
                 <div class="col-md-3">
                     <g:img src="${userdata.photo}"  style="width:60px;height:60px"/>
                 </div>
-
                 <div class="col-md-9">
                     <div><b>${subs.topic.name}</b>(${subs.topic.visibility})</div>
-
                     <div>@${subs.topic.createdBy.username}</div>
-
                     <div class="col-md-6">
                         Subscriptions:
                         <div>${subscount}</div></div>
-
                     <div class="col-md-3">
-
                         Posts:
                         <div><a>${postcount}</a></div></div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-5">
-                        <a>Unsubscribe</a></div>
+
+%{--
+                        <g:link controller="subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link>
+--}%
+                        </div>
 
                     <div class="col-md-7">
-                        <g:form controller="subscription" action="updateSeriouss">
+                        <g:form controller="subscriptions" action="updateSerious">
                             <g:field type="hidden" name="id" value="${subs.id}"></g:field>
                             <g:select onChange="submit()" name="seriousness" from="${['SERIOUS','CASUAL','VERY_SERIOUS']}"
                                       value="${subs.seriousness}" />
@@ -326,7 +322,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <g:if test="${res instanceof newlinksharingapp.LinkResource}">
-                                    <a href="${res.url}">Open Link</a>
+                                    <a href="${res.url}" target="_blank">Open Link</a>
                                     </div>
                                     <div class="col-md-4">
 

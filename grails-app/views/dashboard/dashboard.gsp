@@ -91,8 +91,6 @@
                                             <i class="material-icons" style="text-align:center;">description</i>
                                         </button>
                                     </td>
-
-
                                     <td width=40px>
                                         <button type="button" class="btn btn-info btn-warning" data-toggle="" data-target="">
                                             <i class="photo" style="text-align:center;">
@@ -114,8 +112,6 @@
                                             <g:else>
                                                 <div class="dropdown-content">
                                                     <a href="/users/openPageToChangeProfile">profile</a>
-                                                    %{--<a href="/users/showUserList">Users</a>--}%
-                                                    %{--<a href="#">topic</a>--}%
                                                     <a href="/users/logout">Logout</a>
                                                 </div>
                                             </g:else>
@@ -154,9 +150,7 @@
                                 </table>
                             </div>
                         </div>
-
                         <div class="container"><br>
-                            <!-- All the code above this, I have already -->
                             <!-- for left pannel elements -->
                             <div class="row">
                                 <div class="col-md-5">
@@ -182,11 +176,9 @@
                                                                     <div>${subscount.getAt(i) }</div></div>
                                                                 <div class="col-sm-6">
                                                                     Posts:
-                                                                    <div><a>${resourcecount.get(i)}</a></div></div>
-
+                                                                    <div><a>${resourcecount.get(i)}</a></div>
+                                                                </div>
                                                     <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link></div></div>
-
-
                                                         <g:if test  = "${us.topic.createdBy.email==session.name}" >
                                                             <div class="row">
                                                                 <div class="col-md-12">
@@ -217,13 +209,9 @@
                                                             </g:form>
                                                         </g:else>
                                                 </g:each>
-
                                             </div>
                                         </div>
-
-
                                     %{--Trending topic List--}%
-
                                     <div class="panel panel-default" style="overflow: auto; height: 500px">
                                         <div class="panel-heading">
                                             <div style="float:left">Trending Topics</div>
@@ -239,25 +227,23 @@
                                                             <div class="col-sm-8">
                                                                 <div style="font-size:23px;"><b>${us.name}</b></div>
                                                                 <div>
+                                                                    <g:if test="${us.subscribedTo.user.email.contains(session.name)}">
+                                                                        <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
 
-
-                                                                    <g:if test="${us.createdBy.email==session.name}">
-                                                                        %{--<g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>--}%
-                                                                        <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
                                                                     </g:if>
 
                                                                     <g:else>
-                                                                        <g:link controller="Subscriptions" action="unsubscribe" params="[id:us.id, page :'dashboard']">Unsubscribe</g:link><br>
-                                                                        %{--<g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>--}%
+                                                                        <g:link controller="Subscriptions" action="subscribe" params="[id:us.id, page:'dashboard']">Subscribe</g:link><br>
+
                                                                     </g:else>
                                                                         @${us.createdBy.username}
                                                                 </div>
                                                                 <div class="col-sm-6">
                                                                     Subscriptions:
-                                                                    <div>${subs1.get(i)}</div></div>
+                                                                    <div>${us.subscribedTo.size()}</div></div>
                                                                 <div class="col-sm-6">
                                                                     Posts:
-                                                                    <div><a>${topic1.get(i)}</a></div>
+                                                                    <div><a>${us.resource.size()}</a></div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -277,10 +263,10 @@
                     <div class="panel panel-default col-md-12">
                         <div class="panel-heading">
                             <div style="float:left">Inbox</div>
-                            <div style="margin-left:350px; float: right;">View all</div><br>
+                            %{--<div style="margin-left:350px; float: right;">View all</div>--}%<br>
                         </div>
                         <div class="panel-body">
-                            <g:each in="${resources}" var="res" status="i">%{--<div class="row">--}%
+                            <g:each in="${resources}" var="res" status="i">
                                 <div class="col-md-4"><asset:image src="${res.createdBy.photo}"  style="width:70px;height:70px; float: left"/></div>
                                 <div class="col-sm-8">
                                     <div class="row"><h3><a class=col-sm-3>${res.topic.name}</a></h3><br><p>@${res.createdBy.username}</p></div>
@@ -294,13 +280,14 @@
                                                             <g:link controller="resources" action="downloadFile" params="[id:res.id , tid:res.id , flag:1]">Download</g:link>
                                                         </g:if>
                                                         <g:else>
-                                                            <a href="${res.url}">Open Link</a>
+                                                            <a href="${res.url}" target="_blank">Open Link</a>
                                                         </g:else>
                                                     </div>
                                                 </td>
                                                 <td width="250px" style="color: #761c19">
                                                     <div>
-                                                        <g:link controller="dashboard" action="markAsRead" params="[id:res.id, email:res.createdBy.email]">Mark as read</g:link>
+                                                        <g:link controller="dashboard" action="markAsRead" params="[identifier:res.id, email:session.name]">Mark as read</g:link>
+                                                        %{--<g:link controller="dashboard" action="markAsRead" params="[identifier:res.id, email:res.createdBy.email]">Mark as read</g:link>--}%
                                                     </div>
                                                 </td>
                                                 <td width="250px" style="color: #2b542c;">
@@ -320,31 +307,64 @@
             </div>
     %{--From here, All are pop-ups--}%
         %{--Send Invite--}%
-                        <div class="modal fade" id="invite" role="dialog">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <h4 class="modal-title">Send Invite To</h4>
+                <div class="modal fade" id="invite" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title" >Send Invitation</h4>
+                            </div>
+                            <div class="modal-body">
+                                <g:form class="form-horizontal" controller="sendingLink" action="sendInvite" name="invitation">
+                                    <div class="form-group">
+                                        <div class="col-sm-2 control-label">Email</div>
+                                        <div class="col-sm-10">
+                                            <input type="email" name="email" placeholder="Enter email" class="form-control col-sm-8" />
+                                        </div>
                                     </div>
-                                    <div class="modal-body">
-                                        <g:form controller="topic" action="addtopic" class="topicForm">
-                                            Email *:
-                                            <input class="form-control" type="text" name="topicName"/>
-                                            topic *:
-                                            <br>
-                                            <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
-                                            <br><br>
-                                            <br><br>
-                                            <input type="submit" class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                                        </g:form>
+                                    <div class="form-group">
+                                        <div class="col-sm-2 control-label">Topic</div>
+                                        <div class="col-sm-10">
+                                            <g:select name="topicName" from="${subscriptions.topic.name}" class="dropdown-toggle btn btn-default col-sm-8"></g:select>
+                                        </div>
                                     </div>
-                                    <div class="modal-footer" style=" margin-top: 15px;">
-                                        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">Send</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </g:form>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+
+                %{--<div class="modal fade" id="invite" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Send Invite To</h4>
+                            </div>
+                            <div class="modal-body">
+                                <g:form class="topicForm" controller="sendingLink" action="sendInvite">
+                                    Email *:
+                                    <input class="form-control" type="text" name="sendEmail"/>
+                                    topic *:
+                                    <br>
+                                    <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
+                                    <br><br>
+                                    <br><br>
+                                    <input type="submit" class="btn btn-success" style="float: right; margin-top: 5px;"/>
+                                </g:form>
+                            </div>
+                            <div class="modal-footer" style=" margin-top: 15px;">
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>--}%
 
                 %{--Upload Link--}%
                 <div class="modal fade"  id="uploadLink" role="dialog">

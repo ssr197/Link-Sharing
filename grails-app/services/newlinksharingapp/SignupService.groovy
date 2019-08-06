@@ -9,7 +9,7 @@ class SignupService {
         String password = params.password
         String confirmPassword = params.confirmpassword
         if(confirmPassword.compareTo(password)!= 0){
-            return 0
+            return null
         }
         else{
             String firstname = params.firstname
@@ -18,6 +18,7 @@ class SignupService {
             String username = params.username
             Boolean admin = 0
             Boolean active = 1
+
             def f = request.getFile('image')
             String fName = f.getOriginalFilename()
             String image1 = username+fName
@@ -26,6 +27,9 @@ class SignupService {
             f.transferTo(des)
             Users userRegister = new Users(firstName: firstname, lastName: lastname, email: email, username: username, password: password, admin: admin, active: active, photo: image1)
             userRegister.save(flush: true, failOnError: true, validate: true)
+            return userRegister
+
+
         }
     }
 }

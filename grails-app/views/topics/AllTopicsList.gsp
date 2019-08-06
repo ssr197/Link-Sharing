@@ -103,13 +103,13 @@
                 <div class="panel-body">
                     <div class="container">
                         <div class="col-md-10">
-                            <h3><a href="#"><strong><u>Link Sharing</u></strong></a></h3>
+                            <h3><a href="/dashboard/dashboard"><strong><u>Link Sharing</u></strong></a></h3>
                         </div>
                         <div class="col-md-2">
                             <div class="dropdown">
                                 <button class="btn btn-success">Select</button>
                                 <div class="dropdown-content">
-                                    <a href="/dashboard/dashhboard">Back</a>
+                                    <a href="/dashboard/dashboard">Back</a>
                                     <a href="/users/openPageToChangeProfile">profile</a>
                                     <a href="/users/showUserList">Users</a>
                                     <a href="/users/logout">Logout</a>

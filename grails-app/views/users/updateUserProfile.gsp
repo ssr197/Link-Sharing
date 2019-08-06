@@ -31,12 +31,10 @@
             font-size: 16px;
             border: none;
         }
-
         .dropdown {
             position: relative;
             display: inline-block;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -45,18 +43,14 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
         .dropdown-content a:hover {background-color: #ddd;}
-
         .dropdown:hover .dropdown-content {display: block;}
-
         .dropdown:hover .dropbtn {background-color: #3e8e41;}
         </style>
 
@@ -79,13 +73,11 @@
                             </div>
                             <div class="col-md-7">
                                 <table class="table">
-
                                     <div class="container col-md-10">
                                         <br><br>
                                     </div>
                                     <div class="col-md-2">
                                         <br>
-
                                         <td width=30px>
                                             <div class="dropdown" style="float: right">
                                                 <button class="btn btn-primary">Select</button>
@@ -99,26 +91,13 @@
                                                 </g:if>
                                                 <g:else>
                                                     <div class="dropdown-content">
-                                                        <a href="/users/openPageToChangeProfile">profile</a>
-                                                        %{--<a href="/users/showUserList">Users</a>--}%
-                                                        %{--<a href="#">topic</a>--}%
+                                                        <a href="/dashboard/dashboard">Back</a>
                                                         <a href="/users/logout">Logout</a>
                                                     </div>
                                                 </g:else>
                                             </div>
                                         </td>
-
-                                        %{--<button class="btn btn-primary dropdown-toggle " type="button" data-toggle="dropdown">select
-                                            <span class="caret" onclick="display()"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" id="drop">
-                                            <li><a href="/dashboard/dashboard">Back</a></li>
-                                            <li><a href="/users/showUserList">Users</a></li>
-                                            <li><a href="#">topic</a></li>
-                                            <li><a href="/users/logout">Logout</a></li>
-                                        </ul>--}%
                                     </div>
-
                                 </table>
                             </div>
                         </div>

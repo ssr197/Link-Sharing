@@ -20,9 +20,11 @@
                 document.getElementById("droped").style.display="block";
             }
         </script>
+
         <g:javascript>
-        var url="${createLink(controller:'ResourceRating',action:'save')}"
+        var url="${createLink(controller:'ResourcesRating', action:'saveRating')}"
         </g:javascript>
+
         <style>
 
         body{
@@ -71,14 +73,42 @@
         </style>
 
 
-    </head>
+        <script>
+            function Rating(username , resourceId , value) {
+                console.log("inside")
+                for(var i = 1; i <= 5; i++) {
+                    document.getElementById(i).style.color="black";
+                }
+                for(var i=1; i<=value; i++) {
+                    document.getElementById(i).style.color="red";
+                }
+                console.log("above ajax")
+                $.ajax({
+                    "url":     url,
+                    "type":    "GET",
+                    "data":    {username : username , resourceId : resourceId , value : value},
+                    success: function(resp){
+                        document.getElementById("test").innerHTML="Saved"
+                    }
+                });
+            }
 
-    <body>
+            function Ratingsprint(value) {
+                for(var i=1;i<=5;i++) {
+                    document.getElementById(i).style.color="black";
+                }
+                for(var i=1;i<=value;i++) {
+                    document.getElementById(i).style.color="orange";
+                }
+            }
+        </script>
+    </head>
+    <body onload="Ratingsprint('${value}')">
         <div class="container"><br>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="container col-md-12"style="background: #5bc0de" >
-                        <div class="col-md-3"><h1><a href="#"><strong><u><b>Link Sharing</b></u></strong></a></h1></div>
+                        <div class="col-md-3"><h1><a href="/dashboard/dashboard"><strong><u><b>Link Sharing</b></u></strong></a></h1></div>
                         <div class="col-md-9">
                             <table class="table">
                                 <td width=200px>
@@ -162,7 +192,8 @@
                                         <div>@${resource.createdBy.username}</div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div><g:link controller="topic" action="index" params="[id: resource.topic.id]">${resource.topic.name}</g:link><br></div>
+                                        <div>${resource.topic.name}<br></div>
+                                        %{--<div><g:link controller="resources" action="index" params="[id: resource.topic.id]">${resource.topic.name}</g:link><br></div>--}%
                                         <div>${resource.dateCreated}</div>
                                     </div>
                                 </div>
@@ -174,11 +205,12 @@
                                         <span id="3" onclick="Rating('${session.name}' , '${resource.id}' , '${3}')"class="glyphicon glyphicon-star"></span>
                                         <span id="4" onclick="Rating('${session.name}' , '${resource.id}' , '${4}')"class="glyphicon glyphicon-star"></span>
                                         <span id="5" onclick="Rating('${session.name}' , '${resource.id}' , '${5}')"class="glyphicon glyphicon-star"></span>
+                                        <span><p id="test"></p></span>
                                     </div>
                                 </div><br><br><br>
-                                <p id="test"></p>
-                                <div class="row col-md-8">
-                                    <div>
+                                %{--<p id="test"></p>--}%
+                                <div class="row col-md-12">
+                                    <div class="row col-md-6">
                                         <g:if test="${resource.createdBy.email==session.name}">
                                             <div class="col-md-4"><g:link controller="dashboard" action="deletePost" params="[id:resource.id]">Delete</g:link></div>
                                             <div class="col-md-4"><g:link controller="resource" action="delete" params="[id:resource.id]">  Edit</g:link></div>
@@ -188,13 +220,17 @@
                                             <div class="col-md-4">Edit</div>
                                         </g:else>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <g:if test="${resource instanceof newlinksharingapp.DocumentResource}">
                                             <g:link controller="resources" action="downloadFile" params="[id:resource.id]">Download</g:link>
                                         </g:if>
                                         <g:else>
-                                            <a href="${resource.url}">Open Link</a>
+                                            <a href="${resource.url}" target="_blank">Open Link</a>
                                         </g:else>
+                                    </div>
+                                    <div class="row col-md-3">
+                                        %{--<g:if test="${resource.readingItem}"><a href="">Mark as Read</a></g:if>
+                                        <g:else><a href="">Mark as Unread</a></g:else>--}%
                                     </div>
                                 </div>
                             </div>

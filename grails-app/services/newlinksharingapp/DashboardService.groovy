@@ -9,19 +9,16 @@ import javax.jws.soap.SOAPBinding
 class DashboardService {
 
     def totalTopicCount(String name) {
-        Users u2 = Users.findByEmail(name)
-        Integer Total = u2.topic.size()
+        Integer Total = Users.findByEmail(name).topic.size()
         return Total
     }
 
     def sCount(String name) {
-        Users numberOfSubscription = Users.findByEmail(name)
-        Integer TotalSubscriptionCountAsSum = numberOfSubscription.subscribedTo.size()
+        Integer TotalSubscriptionCountAsSum = Users.findByEmail(name).subscribedTo.size()
         return TotalSubscriptionCountAsSum
     }
 
     def subscriptions(String name) {
-
         Users user = Users.findByEmail(name)
         List<Long> subscriptionList = Subscription.createCriteria().list{
             eq("user.id",user.id)
@@ -29,13 +26,10 @@ class DashboardService {
         subscriptionList.sort{
             b,a-> a.topic.lastUpdated<=>b.topic.lastUpdated}
         return subscriptionList
-
     }
 
     def subscriptioncount(List topicids) {
-
-        def topiccounts = Subscription.createCriteria().list()
-                {
+        def topiccounts = Subscription.createCriteria().list() {
                     projections{
                         count('topic.id')
                         groupProperty('topic.id')
@@ -49,14 +43,13 @@ class DashboardService {
                 if (it.getAt(1)==x)
                     return it.getAt(0)
             }
-        }.collect{it.getAt(0)}
+        }.collect{it.getAt(0)
+        }
         return counts
     }
 
     def postscount(List topicids) {
-
-        def rescounts = Resources.createCriteria().list()
-                {
+        def rescounts = Resources.createCriteria().list() {
                     projections{
                         count('topic.id')
                         groupProperty('topic.id')
@@ -77,52 +70,35 @@ class DashboardService {
         return resourcecount
     }
 
+
+
+
     def trendtopics(){
+        List interTopic = Topics.createCriteria().list{
+            eq('visibility',newlinksharingapp.Visibility.PUBLIC)
+        }.sort{a,b -> b.resource.size()<=>a.resource.size()}
 
-        List <Long> topicsid = Topics.list().collect{
-            it.id
-        }
-        List abcd = Resources.createCriteria().list(max:5)
-                {
-                    projections{
-                        count('topic.id')
-                        groupProperty('topic.id')
-                    }
-                }
-
-        abcd.sort{b,a-> a.getAt(0)<=>b.getAt(0)}
-        List <Integer> xyz = topicsid.collect{ x ->
-            abcd.find{
-                if (it.getAt(1)==x)
-                    return it.getAt(1)
-                else
-                    return 0
-            }
-        }.collect{
-            if(!it)
-                return 0
-            else
-                it.getAt(1)
-        }
-        xyz.removeAll{it==0}
-        List bbb= xyz+(topicsid-xyz)
         List<Topics> tl = []
-        def i
-        for(i=0;i<5;i++)
-            tl.add(Topics.get(bbb[i]))
+        def i = 0
+        while(i < 5 && interTopic.size()>i) {
+            tl.add(interTopic.get(i))
+            i++
+        }
         return tl
     }
     def topTopicsPosts() {
         List<Long> topicsid = Topics.list().collect {
             it.id
         }
-                List abcd = Resources.createCriteria().list(max: 5)
-                {
-                    projections {
-                        count('topic.id')
-                        groupProperty('topic.id')
-                    }
-                }
+
+        List abcd = Resources.createCriteria().list(max: 5)
+        {
+            projections {
+                count('topic.id')
+                groupProperty('topic.id')
+            }
+        }
+
         abcd.sort { b, a -> a.getAt(0) <=> b.getAt(0) }
         List<Integer> xyz = topicsid.collect { x ->
             abcd.find {
@@ -140,13 +116,11 @@ class DashboardService {
         return xyz
     }
 
-    def topTopicSubs()
-    {
+    def topTopicSubs() {
         List<Long> topicsid = Topics.list().collect {
             it.id
         }
-        def topiccounts = Subscription.createCriteria().list()
-                {
+        def topiccounts = Subscription.createCriteria().list() {
                     projections {
                         count('topic.id')
                         groupProperty('topic.id')
@@ -165,6 +139,5 @@ class DashboardService {
         else
             it.getAt(0) }
         return counts
-
     }
 }

@@ -36,6 +36,5 @@ class UserListService {
         }
         u.save(failOnError: true, flush: true)
         return u
-
     }
 }

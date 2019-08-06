@@ -4,7 +4,6 @@ import grails.transaction.Transactional
 
 @Transactional
 class ReadingService {
-
     def displayUnread(String email) {
         Long id = Users.findByEmail(email).id
         List<Long> Verys = Subscription.createCriteria().list {
@@ -78,21 +77,22 @@ class ReadingService {
         Casr.each{
             resources.add(it)
         }
-        print "This is resources of readingService "+resources
         return resources
     }
 
 
-    def editreadMethod(Integer identifier,String email) {
-        Users user=Users.findByEmail(email)
-        Long id = Long.parseLong(identifier)
+    def editreadMethod(identifier, email) {
+        Long valueHere = Long.parseLong(identifier)
+        Users user = Users.findByEmail(email)
         ReadingItem ri = ReadingItem.createCriteria().get{
-            eq('resource.id',id)
+            eq('resource.id',valueHere)
             eq('user.id',user.id)
         }
-        ri.isRead=true
-        ri.save()
+        println "isRead is "+ ri
+        ri.isRead = true
+        ri.save(flush: true)
     }
+
     def deleteMethod(params) {
         Resources res = Resources.get(Long.parseLong(params.id))
         res.delete()

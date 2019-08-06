@@ -5,7 +5,6 @@ import grails.transaction.Transactional
 @Transactional
 class ResetPasswordService {
 
-
     def validateEmail(Map params) {
         String email = params.email
         Users userExists = Users.findByEmail(email)
@@ -22,9 +21,8 @@ class ResetPasswordService {
         Users ux = Users.findByEmail(email)
         ux.password = pass
         ux.save(failOnError:true, flush:true)
-
-
     }
+
     def updateProfile(params, request, email){
         Users u1 = Users.findByEmail(email)
         String firstName = params.fname
@@ -40,7 +38,6 @@ class ResetPasswordService {
             u1.firstName = firstName
             u1.save(failOnError: true, flush: true)
         }
-
         if(lastName != null){
             u1.lastName = lastName
             u1.save(failOnError: true, flush: true)

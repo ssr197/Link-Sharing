@@ -5,17 +5,26 @@ import grails.artefact.Controller
 class ResourcesController {
     def resourcesService
     def dashboardService
+    def resourcesRatingService
 
     def saveDocument() {
-        String email = session.name
-        resourcesService.saveDocumentMethod(params, request, email)
-        redirect(controller: "dashboard", action: "dashboard")
+        if(!session.name){
+            render("Please Login First")
+        }else {
+            String email = session.name
+            resourcesService.saveDocumentMethod(params, request, email)
+            redirect(controller: "dashboard", action: "dashboard")
+        }
     }
 
     def saveLink() {
-        String email = session.name
-        resourcesService.saveLinkMethod(params, request, email)
-        redirect(controller: "dashboard", action: "dashboard")
+        if(!session.name){
+            render("Please Login First")
+        }else {
+            String email = session.name
+            resourcesService.saveLinkMethod(params, request, email)
+            redirect(controller: "dashboard", action: "dashboard")
+        }
     }
 
     def downloadFile() {
@@ -27,7 +36,6 @@ class ResourcesController {
             println "id:" + id
             DocumentResource dr = (DocumentResource) Resources.get(id)
 
-            //Users user = session.user
             Users user = Users.findByEmail(session.name)
             def file = new File("/home/saurabh/Desktop/downloadedFromLinkSharing/a.txt")
             def temp = new File(dr.filePath)
@@ -41,21 +49,18 @@ class ResourcesController {
         }
     }
 
-    def deletePost() {
-    }
-
-
     def index() {
-        if (!session.name) {
-            render("Login reqired")
-        } else {
+        if(!session.name){
+            render("Please Login First")
+        }else{
             Resources res = Resources.get(params.id)
             List trending = dashboardService.trendtopics()
             List trending1 = trending.collect { it.id }
             Users user = Users.findByEmail(session.name)
             List subcount = dashboardService.subscriptioncount(trending1)
             List postcount = dashboardService.postscount(trending1)
-            render(view: "showPostAndRate", model: [resource: res, trending: trending, countforsubs: subcount, countforposts: postcount, userdata:user])
+            def rating = resourcesRatingService.readrating(session.name, res)
+            render(view: "showPostAndRate", model: [resource: res, trending: trending, countforsubs: subcount, countforposts: postcount, userdata:user, value: rating])
         }
     }
 }

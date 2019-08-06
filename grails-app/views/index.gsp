@@ -106,15 +106,18 @@
                     <div class="panel-body">
                         <g:form class="form-horizontal" url="[controller:'users' , action : 'Login']">
                             <div class="form-group">
-                                <text class="control-label col-md-4" for="email"  style="text-align: left;">Email/Username *</text>
+                                <text class="control-label col-md-4" for="email"  style="text-align: left;">Email *</text>
                                 <div class="col-md-8">
-                                    <input type="email" class="form-control" id="lemail" placeholder="Enter email" name="l_email">
+                                    <input type="text" class="form-control" id="lemail" placeholder="Enter email" name="l_email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <text class="control-label col-md-4 " for="l_pwd" style="text-align: left;">Password *</text>
                                 <div class="col-md-8">
                                     <input type="password" class="form-control" id="lpwd" placeholder="Enter password" name="l_pwd">
+                                    <span>
+                                        <p id="message">${flash.message}</p>
+                                    </span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -148,12 +151,16 @@
                                 <text class="control-label col-md-4" for="email" style="text-align: left;">Email *</text>
                                 <div class="col-md-8">
                                     <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                                    <span>
+                                        <p id="message1">${flash.message1}</p>
+                                    </span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <text class="control-label col-md-4" for="username" style="text-align: left;">Username *</text>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                                    ${flash.message2}
                                 </div>
                             </div>
                             <div class="form-group">
@@ -175,7 +182,7 @@
                             <div class="form-group">
                                 <text class="control-label col-md-4 " for="photo" style="text-align: left;">Photo</text>
                                 <div class="col-md-8">
-                                    <input type="file" class="form-control" id="pwd" placeholder="choose" name="image">
+                                    <input type="file" class="form-control" id="pwd" placeholder="choose" name="image"><br>
                                 </div>
                                 <div class="form-group">
                                     <div class=" col-md-8"></div>

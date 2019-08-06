@@ -144,7 +144,7 @@
                 <td>${User.lastName}</td>
                 <td>${User.active}</td>
                 <td>
-                    <button class="btn btn-warning">
+                    <button class="btn btn-danger">
                         <g:link action="changeAdminPermission" params="${[variable1: User.email]}">Activate/Deactivate</g:link>
                     </button>
                 </td>

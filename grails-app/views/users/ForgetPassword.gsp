@@ -38,7 +38,7 @@
         <br><br><br><br><br><br><br><br><br><br>
 
         <div class="column" style="background: #5D5C61;">
-          <g:form url="[controller:'sendingLink', action : 'index']" class="form-control">
+          <g:form url="[controller:'sendingLink', action : 'index']"  class="form-control">
             <div class="form-group">
               <br><br><br>
               <text class="control-label col-md-12" for="resetPassword"  style="text-align: center; color: red">
@@ -48,7 +48,6 @@
               <br>
               <div class="" style="alignment: center">
                   <input type="email" class="form-control" id="resetPassword" placeholder="Enter email" name="fetchEmail">
-
               </div>
             </div>
             <br>
