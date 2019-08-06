@@ -52,7 +52,8 @@ class UsersController {
 
     def showUserList(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             List<User> listAll = userListService.AllUsers();
             Users u1 = Users.findByEmail(session.name)
@@ -82,7 +83,8 @@ class UsersController {
 
     def openPageToChangeProfile(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             render(view: "updateUserProfile")
         }
@@ -90,7 +92,8 @@ class UsersController {
 
     def updateProfile(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             resetPasswordService.updateProfile(params, request, session.name)
             redirect(controller: "dashboard", action: "dashboard")
@@ -99,7 +102,8 @@ class UsersController {
 
     def changeAdminPermission(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             String key = params.variable1
             userListService.changerPermission(key)
@@ -109,7 +113,8 @@ class UsersController {
 
     def makeAdmin(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             String key = params.variable2
             userListService.adminMethod(key)

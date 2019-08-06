@@ -75,6 +75,7 @@
                                         <button type="button" class="btn btn-info btn-warning" data-toggle="modal" title="New Topic" data-target="#topicModal">
                                             <i class="material-icons">chat_bubble_outline</i>
                                         </button>
+                                        <span><p>${flash.message3}</p></span>
                                     </td>
                                     <td width=20px style="text-align:center;">
                                         <button type="button" class="btn btn-info btn-warning" data-toggle="modal" title="Send Invite" data-target="#invite">
@@ -259,11 +260,15 @@
 
         <!-- this is for right side pannel -->
                 <div class="col-md-7">
-                %{--inbox--}%
+                %{--Flash message 2--}%
+                    <div class="col-md-12">
+                    <span>${flash.message2}</span>
+                    </div>
+                    %{--inbox--}%
                     <div class="panel panel-default col-md-12">
                         <div class="panel-heading">
                             <div style="float:left">Inbox</div>
-                            %{--<div style="margin-left:350px; float: right;">View all</div>--}%<br>
+                            <br>
                         </div>
                         <div class="panel-body">
                             <g:each in="${resources}" var="res" status="i">

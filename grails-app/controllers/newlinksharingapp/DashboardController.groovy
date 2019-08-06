@@ -8,7 +8,8 @@ class DashboardController {
 
     def dashboard() {
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             Users u1 = Users.findByEmail(session.name)
             Integer topicCount = dashboardService.totalTopicCount(session.name)
@@ -58,14 +59,16 @@ class DashboardController {
 
     def forwardToUploadDocument(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             render(view: "uploadNewDocument")
         }
     }
     def forwardToUploadLink(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             render(view: "uploadNewLink")
         }
@@ -76,7 +79,8 @@ class DashboardController {
     }
     def deletePost(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             readingService.deleteMethod(params)
             redirect(action: "dashboard")

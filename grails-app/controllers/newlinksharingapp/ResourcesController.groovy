@@ -9,7 +9,8 @@ class ResourcesController {
 
     def saveDocument() {
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             String email = session.name
             resourcesService.saveDocumentMethod(params, request, email)
@@ -19,7 +20,8 @@ class ResourcesController {
 
     def saveLink() {
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             String email = session.name
             resourcesService.saveLinkMethod(params, request, email)
@@ -30,7 +32,8 @@ class ResourcesController {
     def downloadFile() {
 
         if (!session.name) {
-            render("please login first")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         } else {
             Long id = Long.parseLong(params.id)
             println "id:" + id
@@ -51,7 +54,8 @@ class ResourcesController {
 
     def index() {
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else{
             Resources res = Resources.get(params.id)
             List trending = dashboardService.trendtopics()

@@ -6,12 +6,15 @@ import grails.transaction.Transactional
 class TopicsController {
     def dashboardService
     def topicsService
-    def resourcesRatingService
+    //def resourcesRatingService
 
     def addTopics() {
-        Boolean t = Topics.findByName(params.topicName)
-        if(t){
-            render(text: "Topic Already Exists")
+        Topics t = Topics.findByName(params.topicName)
+        List myTopicList = dashboardService.postByMe(session.name)
+        boolean var = myTopicList.contains(t)
+        if(var){
+            flash.message3 = "Topic Exists"
+            redirect(controller: 'dashboard', action: 'dashboard')
         }
         else{
             String email = session.name
@@ -22,7 +25,8 @@ class TopicsController {
 
     def topicShow(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             List topicList = topicsService.showListMethod()
             render(view: 'AllTopicsList', model: [topiclist: topicList])
@@ -31,7 +35,8 @@ class TopicsController {
 
     def deleteTopics(){
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             List topicList1 = topicsService.deletePost(params)
             redirect(action: "topicShow")
@@ -40,7 +45,8 @@ class TopicsController {
 
     def viewTopics() {
         if (!session.name) {
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         } else {
             Users user = Users.findByEmail(session.name)
             Users user1 = Users.findByEmail(session.name)

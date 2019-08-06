@@ -17,29 +17,8 @@ def resetPasswordService
         }
     }
 
-    /*def sendInvite(){
-        println "You are inside send Link Controller"
-        println "The email is "+ params.SendEmail
-
-        //println "The topic is "+params.value
-
-        *//*Users user = Users.findByEmail(params.sendEmail)
-        if(user){
-            String link = createLink(controller: 'subscriptions', action: 'sendSubscrioptionInvite', params: [email: params.sendEmail, id:params.subscriptions.topic.id], absolute: true)
-            sendMail {
-                to "${user.email}"
-                subject "Hello ${user.firstName}, You have a subscription invite!!"
-                text link
-            }
-            render("Invitition sent!")
-        }
-        render text: "Oops, User is not registered!"*/
-   /* }*/
-
 
     def sendInvite() {
-        /*println "The email which is recieved here is "+ params.email
-        println "The topic id which is recieved here is "+params.topicName*/
         Users user = Users.findByEmail(params.email)
         if(!user)
             user = Users.findByEmail(params.email)

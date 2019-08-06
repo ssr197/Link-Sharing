@@ -6,7 +6,8 @@ class SearchController {
 
     def search() {
         if(!session.name){
-            render("Please Login First")
+            flash.message = "Login First!!!"
+            redirect url:'/'
         }else {
             List<String> resultSet = searchService.searchMethod(params.q)
             if (resultSet)

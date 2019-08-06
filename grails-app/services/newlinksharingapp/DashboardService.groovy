@@ -86,6 +86,7 @@ class DashboardService {
         }
         return tl
     }
+
     def topTopicsPosts() {
         List<Long> topicsid = Topics.list().collect {
             it.id
@@ -139,5 +140,15 @@ class DashboardService {
         else
             it.getAt(0) }
         return counts
+    }
+
+    def postByMe(String name){
+        Users u = Users.findByEmail(name)
+        List<Topics> myList = Topics.createCriteria().list{
+            projections{
+                eq('createdBy', u)
+            }
+        }
+        return myList
     }
 }
