@@ -6,22 +6,18 @@ import grails.transaction.Transactional
 class SearchService {
 
     def searchMethod(String searchKey) {
+        String searchWord = searchKey
 
-        println "inside service with ${searchKey}"
-        String entry = searchKey
-
-        if (entry==null)
+        if (searchWord == null || searchWord == 'all')
             return null
 
-        List<String> topicResults = Topics.createCriteria().list{
-            ilike("name","%${entry}%")
-        }.collect{it.name}
+        List<String> topicResults = Topics.createCriteria().list {
+            ilike("name", "%${searchWord}%")
+        }.collect { it.name }
 
-        List<String> resourceResults = Resources.createCriteria().list{
-            ilike("description","%${entry}%")
-        }.collect{it.description}
-        println ">>>>>>>>>>>>>${topicResults}"
-        println ">>>>>>>>>>>>>${resourceResults}"
+        List<String> resourceResults = Resources.createCriteria().list {
+            ilike("description", "%${searchWord}%")
+        }.collect { it.description }
         List<String> resultSet = topicResults + resourceResults
         return resultSet
     }

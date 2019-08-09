@@ -7,83 +7,82 @@ import org.h2.engine.User
 @Transactional
 class TopicsService {
 
-    def addTopicMethod(params,email) {
-        String topic_Name = params.topicName
-        Users u2 = Users.findByEmail(email)
-        Topics t2 = new Topics(name: topic_Name ,visibility: params.selection)
-        u2.addToTopic(t2)
+    def addTopicMethod(params, email) {
+        Users user = Users.findByEmail(email)
+        Topics topic = new Topics(name: params.topicName, visibility: params.selection)
+        user.addToTopic(topic)
 
-        if(t2.validate()){
-            t2.save(failOnError: true, flush: true)
-            u2.save(flush: true)
-        } else{
-            t2.errors.getAllErrors()
-        }
-
-        Subscription sub = new Subscription(seriousness: Seriousness.VERY_SERIOUS)
-        u2.addToSubscribedTo(sub)
-        t2.addToSubscribedTo(sub)
-        if (sub.validate()) {
-            sub.save(failOnError: true, flush: true)
+        if (topic.validate()) {
+            topic.save(failOnError: true, flush: true)
+            user.save(flush: true)
         } else {
-            print sub.errors.getAllErrors()
+            topic.errors.getAllErrors()
         }
-
+        Subscription subscription = new Subscription(seriousness: Seriousness.VERY_SERIOUS)
+        user.addToSubscribedTo(subscription)
+        topic.addToSubscribedTo(subscription)
+        if (subscription.validate()) {
+            subscription.save(failOnError: true, flush: true)
+        } else {
+            print subscription.errors.getAllErrors()
+        }
     }
 
-    def showListMethod(){
+    def showListMethod() {
         List<Topics> topicList = Topics.list()
         return topicList
     }
 
 
-    def deletePost(params){
-        Long topic_id = Long.parseLong(params.variable1)
+    def deletePost(params) {
         String email = params.variable2
-        Topics t1 = Topics.findById(topic_id)
-        t1.delete(flush: true)
+        Topics topic = Topics.findById(Long.parseLong(params.variable1))
+        topic.delete(flush: true)
     }
 
-    def subscriptioncount(List userslist){
+    def subscriptioncount(List userslist) {
         def usercounts = Subscription.createCriteria().list()
                 {
-                    projections{
+                    projections {
                         count('user.id')
                         groupProperty('user.id')
                     }
-                    'user'{
-                        inList('id',userslist)
+                    'user' {
+                        inList('id', userslist)
                     }
                 }
-        List <Integer> counts = userslist.collect{ x ->
-            usercounts.find{
-                if (it.getAt(1)==x)
+        List<Integer> counts = userslist.collect { x ->
+            usercounts.find {
+                if (it.getAt(1) == x)
                     return it.getAt(0)
             }
-        }.collect{it.getAt(0)}
+        }.collect { it.getAt(0) }
         return counts
     }
 
-    def topiccount(List userslist){
-        def topcounts=Topics.createCriteria().list()
+
+    def topiccount(List userslist) {
+        def topcounts = Topics.createCriteria().list()
                 {
-                    projections{
+                    projections {
                         count('createdBy.id')
                         groupProperty('createdBy.id')
                     }
-                    'createdBy'{
-                        inList('id',userslist)
+                    'createdBy' {
+                        inList('id', userslist)
                     }
                 }
-        List <Integer> topiccount = userslist.collect{ x ->
-            topcounts.find{
-                if (it.getAt(1)==x)
+        List<Integer> topiccount = userslist.collect { x ->
+            topcounts.find {
+                if (it.getAt(1) == x)
                     return it.getAt(0)
             }
-        }.collect{if(!it)
-            return 0
-        else
-            it.getAt(0)}
+        }.collect {
+            if (!it)
+                return 0
+            else
+                it.getAt(0)
+        }
         return topiccount
     }
 }

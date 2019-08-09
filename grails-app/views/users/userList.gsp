@@ -2,41 +2,42 @@
 <head>
     <script>
         function show() {
-            document.getElementById("drop").style.display="block";
+            document.getElementById("drop").style.display = "block";
         }
     </script>
-	<title>
-		User List
-	</title>
+    <title>
+        User List
+    </title>
 
 
     <script>
-        function display(){
-            document.getElementById("droped").style.display="block";
+        function display() {
+            document.getElementById("droped").style.display = "block";
         }
     </script>
 
-	<style>
-		table {
-  			font-family: arial, sans-serif;
-  			border-collapse: collapse;
-  			width: 100%;
-		}
+    <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-		td, th {
-  			border: 1px solid #dddddd;
-  			text-align: left;
-  			padding: 8px;
-		}
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-		tr:nth-child(even) {
-  			background-color: #dddddd;
-		}
-        body{
-            background: #5D5C61;
-        }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
 
-	</style>
+    body {
+        background: #5D5C61;
+    }
+
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
     .dropbtn {
@@ -57,7 +58,7 @@
         position: absolute;
         background-color: #f1f1f1;
         min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
@@ -68,11 +69,17 @@
         display: block;
     }
 
-    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
 
-    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
     </style>
 
 
@@ -81,8 +88,6 @@
     <title>user Page</title>
 
 </head>
-
-
 
 
 <body>
@@ -100,7 +105,7 @@
 
                 </td>
                 <td>
-                    <div class="dropdown"style="float: right">
+                    <div class="dropdown" style="float: right">
                         <button class="dropbtn">${userdata.username}</button>
                         <g:if test="${userdata.admin}">
                             <div class="dropdown-content">
@@ -113,8 +118,6 @@
                         <g:else>
                             <div class="dropdown-content">
                                 <a href="/users/openPageToChangeProfile">profile</a>
-                                %{--<a href="/users/showUserList">Users</a>--}%
-                                %{--<a href="#">topic</a>--}%
                                 <a href="/users/logout">Logout</a>
                             </div>
                         </g:else>
@@ -124,8 +127,8 @@
         </div>
     </div>
 </div>
-    <table>
-      <tr>
+<table>
+    <tr>
         <th>Id</th>
         <th>Username</th>
         <th>Email</th>
@@ -133,30 +136,30 @@
         <th>LastName</th>
         <th>Active</th>
         <th>Manage<th>
-      </tr>
+    </tr>
 
-        <g:each var="User" in="${allUserList}">
-            <tr>
-                <td>${User.id}</td>
-                <td>${User.username}</td>
-                <td>${User.email}</td>
-                <td>${User.firstName}</td>
-                <td>${User.lastName}</td>
-                <td>${User.active}</td>
-                <td>
-                    <button class="btn btn-danger">
-                        <g:link action="changeAdminPermission" params="${[variable1: User.email]}">Activate/Deactivate</g:link>
-                    </button>
-                </td>
-                <td>${User.admin}</td>
-                <td>
-                    <button class="btn btn-warning">
-                        <g:link action="makeAdmin" params="${[variable2: User.email]}">Admin/Normal</g:link>
-                    </button>
-                </td>
-            </tr>
-        </g:each>
+    <g:each var="User" in="${allUserList}">
+        <tr>
+            <td>${User.id}</td>
+            <td>${User.username}</td>
+            <td>${User.email}</td>
+            <td>${User.firstName}</td>
+            <td>${User.lastName}</td>
+            <td>${User.active}</td>
+            <td>
+                <button class="btn btn-danger">
+                    <g:link action="changeActiveStatus" params="${[variable1: User.email]}">Activate/Deactivate</g:link>
+                </button>
+            </td>
+            <td>${User.admin}</td>
+            <td>
+                <button class="btn btn-warning">
+                    <g:link action="makeAdmin" params="${[variable2: User.email]}">Admin/Normal</g:link>
+                </button>
+            </td>
+        </tr>
+    </g:each>
 
-    </table>
+</table>
 </body>
 </html>

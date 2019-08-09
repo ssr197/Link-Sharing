@@ -1,24 +1,30 @@
 package newlinksharingapp
 
-import grails.artefact.Controller
+
 import org.h2.engine.User
+
 class UsersController {
 
     def signupService
     def loginService
     def resetPasswordService
     def userListService
+    def dashboardService
+
+    def index() {
+        def recent = signupService.recentShare()
+        def postListt = signupService.postList()
+        [posts: postListt, resources: recent]
+    }
 
     def signup() {
-        if(Users.findByEmail(params.email)){
+        if (Users.findByEmail(params.email)) {
             flash.message1 = "Email is used"
             redirect(url: '/')
-        }
-        if(Users.findByUsername(params.username)) {
+        } else if (Users.findByUsername(params.username)) {
             flash.message2 = "Username is used"
             redirect(url: "/")
-        }
-        else {
+        } else {
             def signUpValue = signupService.signupMethod(params, request)
             if (signUpValue) {
                 session.name = signUpValue.email
@@ -34,8 +40,8 @@ class UsersController {
         Users loginValue = loginService.LoginMethod(params)
         if (loginValue) {
             session.name = loginValue.email
-            Users x = Users.findByEmail(session.name)
-            session.isAdmin = x.admin
+            Users user = Users.findByEmail(session.name)
+            session.isAdmin = user.admin
             redirect(controller: 'dashboard', action: 'dashboard')
         } else {
             flash.message = "Login Failed"
@@ -43,18 +49,15 @@ class UsersController {
         }
     }
 
-
     def logout() {
         session.invalidate()
         redirect(url: "/")
     }
 
-
-    def showUserList(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
+    def showUserList() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
             List<User> listAll = userListService.AllUsers();
             Users u1 = Users.findByEmail(session.name)
             render(view: "userList", model: [allUserList: listAll, userdata: u1])
@@ -65,7 +68,7 @@ class UsersController {
         render view: "ForgetPassword"
     }
 
-    def validateResetPasswordEmail(){
+    def validateResetPasswordEmail() {
         if (resetPasswordService.validateEmail(params) == 1) {
             session.name = params.email
             render(view: 'resetNewPass')
@@ -74,51 +77,56 @@ class UsersController {
         }
     }
 
-    def updatePassword(){
+    def updatePassword() {
         String changePasswordOfEmail = session.name
         resetPasswordService.update(params, changePasswordOfEmail)
         session.invalidate()
         redirect(url: "/")
     }
 
-    def openPageToChangeProfile(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
-            render(view: "updateUserProfile")
+    def openPageToChangeProfile() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
+            Users user = Users.findByEmail(session.name)
+            Integer subsCount = dashboardService.sCount(session.name)
+            Integer topicCount = dashboardService.totalTopicCount(session.name)
+            render(view: 'updateUserProfile', model: [userdata: user, count_topic: topicCount, count_subscribe: subsCount])
         }
     }
 
-    def updateProfile(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
+    def updateProfile() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
             resetPasswordService.updateProfile(params, request, session.name)
             redirect(controller: "dashboard", action: "dashboard")
         }
     }
 
-    def changeAdminPermission(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
+    def changeActiveStatus() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
             String key = params.variable1
-            userListService.changerPermission(key)
+            userListService.activateOrDeactivateUser(key)
             redirect(controller: "users", action: "showUserList")
         }
     }
 
-    def makeAdmin(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
+    def makeAdmin() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
             String key = params.variable2
-            userListService.adminMethod(key)
+            userListService.makeAdmin(key)
             redirect(controller: "users", action: "showUserList")
         }
     }
+
+    def redirectToHome() {
+        flash.message = "Login First!!!"
+        redirect url: '/'
+    }
+
 }

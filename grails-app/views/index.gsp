@@ -1,3 +1,4 @@
+%{--
 <!doctype html>
 <html>
     <head>
@@ -5,7 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="4nonymous">
         <style>
             body{
-                background: #5D5C61;
+                background: #b2b2b2;
             }
         </style>
 
@@ -138,19 +139,19 @@
                             <div class="form-group">
                                 <text class="control-label col-md-4" for="firstName" style="text-align: left;">First Name *</text>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="firstName" placeholder="Enter First Nam" name="firstname">
+                                    <input type="text" class="form-control" required id="firstName" placeholder="Enter First Nam" name="firstname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <text class="control-label col-md-4" for="lastname" style="text-align: left;">Last Name *</text>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastname">
+                                    <input type="text" class="form-control" id="lastName" required placeholder="Enter Last Name" name="lastname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <text class="control-label col-md-4" for="email" style="text-align: left;">Email *</text>
                                 <div class="col-md-8">
-                                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                                    <input type="email" class="form-control" id="email" required placeholder="Enter Email" name="email">
                                     <span>
                                         <p id="message1">${flash.message1}</p>
                                     </span>
@@ -159,20 +160,20 @@
                             <div class="form-group">
                                 <text class="control-label col-md-4" for="username" style="text-align: left;">Username *</text>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                                    <input type="text" class="form-control" id="username" required placeholder="Enter username" name="username">
                                     ${flash.message2}
                                 </div>
                             </div>
                             <div class="form-group">
-                                <text class="control-label col-md-4" for="pwd" style="text-align: left;">Password *</text>
+                                <text class="control-label col-md-4" for="pwd"  style="text-align: left;">Password *</text>
                                 <div class="col-md-8">
-                                    <input type="password" class="form-control" id="passWord" placeholder="Enter Password" name="password" >
+                                    <input type="password" class="form-control" required id="passWord" pattern=".{3,}" title="Three or more characters" placeholder="Enter Password" name="password" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <text class="control-label col-md-4" for="pwd" style="text-align: left;">Confirm Password*</text>
                                 <div class="col-md-8">
-                                    <input type="password" class="form-control" id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword" onfocusout='MatchPassword()'>
+                                    <input type="password" class="form-control" required id="passwordConfirm" placeholder="Re-Enter Password" name="confirmpassword" onfocusout='MatchPassword()'>
                                     <div>
                                         <span id="checkPass"></span>
                                     </div>
@@ -182,7 +183,7 @@
                             <div class="form-group">
                                 <text class="control-label col-md-4 " for="photo" style="text-align: left;">Photo</text>
                                 <div class="col-md-8">
-                                    <input type="file" class="form-control" id="pwd" placeholder="choose" name="image"><br>
+                                    <input type="file" class="form-control" required id="pwd" placeholder="choose" accept="image/*" name="image"><br>
                                 </div>
                                 <div class="form-group">
                                     <div class=" col-md-8"></div>
@@ -197,4 +198,4 @@
             </div>
         </div>
     </body>
-</html>
+</html>--}%

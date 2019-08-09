@@ -8,83 +8,72 @@ import javax.jws.soap.SOAPBinding
 class ResourcesService {
 
     def saveDocumentMethod(params, request, email) {
-        Users u = Users.findByEmail(email)
-        String userName = u.username
+        Users user = Users.findByEmail(email)
 
-        String description = params.select
-        String tname = params.topics
-
-        def topicObject = Topics.findByName(tname)
-        Long tId = topicObject.id
+        def topicObject = Topics.findByName(params.topics)
+        Long topicId = topicObject.id
 
         def f = request.getFile('document')
         String fname = f.getOriginalFilename()
 
-        String fPath = '/home/saurabh/Desktop/Link-Sharing/grails-app/assets/document/' + userName+fname
+        String fPath = '/home/saurabh/Desktop/Link-Sharing/grails-app/assets/document/' + user.username + fname
         File destination = new File(fPath)
         f.transferTo(destination)
 
-        DocumentResource newRes = new DocumentResource(description: description, topic: tId, filePath: fPath)
-        u.addToResource(newRes)
-        topicObject.addToResource(newRes)
-        newRes.save(flush:true, failOnError:true)
-
-        List<Users> userIds = Subscription.createCriteria().list{
-            projections{
-                property('user.id')
-            }
-            eq('topic.id',tId)
-        }
-
-
-        Boolean isRead = false
-
-        userIds.each {
-            Users us = Users.get(it)
-            ReadingItem ri = new ReadingItem(isRead:isRead,resource:newRes,user:us)
-            ri.save(failOnError: true, flush: true)
-            us.addToReadItem(ri)
-            newRes.addToReadingItem(ri)
-            us.save(flush:true,failOnError:true)
-            newRes.save(flush:true,failOnError:true)
-        }
-
+        DocumentResource newResource = new DocumentResource(description: params.select, topic: topicId, filePath: fPath)
+        user.addToResource(newResource)
+        topicObject.addToResource(newResource)
+        newResource.save(flush: true, failOnError: true)
+        List subscriberList = subscribersList(topicId)
+        addToUnreadItem(subscriberList, newResource)
     }
 
-    def saveLinkMethod(params, request, email){
+    def saveLink(params, email) {
 
-        Users u = Users.findByEmail(email)
-        String userName = u.username
-        String description = params.selectlink
-        String tname = params.topic
-        def tobj = Topics.findByName(tname)
-        //Integer tID = tobj.id
-        Long tID = tobj.id
-        //Long topic_id = Long.parseLong(tID)
+        Users user = Users.findByEmail(email)
+        Topics topicObject = Topics.findByName(params.topic)
+        Long topicId = topicObject.id
         String link = params.linkres
-        LinkResource newRes = new LinkResource(description:description,topic:tID, url:link)
-        u.addToResource(newRes)
-        tobj.addToResource(newRes)
-        newRes.save(flush:true,failOnError:true)
+        LinkResource newResource = new LinkResource(description: params.selectlink, topic: topicId, url: link)
+        user.addToResource(newResource)
+        topicObject.addToResource(newResource)
+        newResource.save(flush: true, failOnError: true)
+        List subscriberList = subscribersList(topicId)
+        addToUnreadItem(subscriberList, newResource)
+    }
 
-        List<Users> userIds = Subscription.createCriteria().list{
-            projections{
+    def AllPostList() {
+        List<Resources> resourceList = Resources.createCriteria().list {
+            'topic' {
+                eq('visibility', Visibility.PUBLIC)
+            }
+        }
+        return resourceList
+    }
+
+
+    def subscribersList(topicId) {
+        List<Users> userIds = Subscription.createCriteria().list {
+            projections {
                 property('user.id')
             }
-            eq('topic.id', tID)
+            eq('topic.id', topicId)
         }
+        return userIds
+    }
 
 
+    def addToUnreadItem(subscriberList, newResource) {
         Boolean isRead = false
-
-        userIds.each {
+        subscriberList.each {
             Users us = Users.get(it)
-            ReadingItem ri = new ReadingItem(isRead:isRead,resource:newRes,user:us)
-            ri.save(failOnError: true, flush: true)
-            us.addToReadItem(ri)
-            newRes.addToReadingItem(ri)
-            us.save(flush:true,failOnError:true)
-            newRes.save(flush:true,failOnError:true)
+            ReadingItem readItem = new ReadingItem(isRead: isRead, resource: newResource, user: us)
+            readItem.save(failOnError: true, flush: true)
+            us.addToReadItem(readItem)
+            newResource.addToReadingItem(readItem)
+            us.save(flush: true, failOnError: true)
+            newResource.save(flush: true, failOnError: true)
         }
     }
+
 }

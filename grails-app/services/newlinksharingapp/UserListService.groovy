@@ -8,33 +8,33 @@ import grails.transaction.Transactional
 class UserListService {
 
     def AllUsers() {
-
         List AllUserList = Users.list()
         return AllUserList;
     }
 
-    def changerPermission(String name){
-        Users u = Users.findByEmail(name)
-        if(u.id != 2) {
-            if (u.active) {
-                u.active = false
+    def activateOrDeactivateUser(String name) {
+        Users user = Users.findByEmail(name)
+        if (user.id != 2) {
+            if (user.active) {
+                user.active = false
             } else {
-                u.active = true
+                user.active = true
             }
         }
-        u.save(failOnError: true, flush: true)
-        return u
+        user.save(failOnError: true, flush: true)
+        return user
     }
-    def adminMethod(String email){
-        Users u = Users.findByEmail(email)
-        if(u.id != 2){
-            if(u.admin){
-                u.admin = false
-            }else{
-                u.admin = true
+
+    def makeAdmin(String email) {
+        Users user = Users.findByEmail(email)
+        if (user.id != 2) {
+            if (user.admin) {
+                user.admin = false
+            } else {
+                user.admin = true
             }
         }
-        u.save(failOnError: true, flush: true)
-        return u
+        user.save(failOnError: true, flush: true)
+        return user
     }
 }

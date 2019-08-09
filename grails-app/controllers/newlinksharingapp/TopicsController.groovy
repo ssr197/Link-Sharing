@@ -9,35 +9,36 @@ class TopicsController {
     //def resourcesRatingService
 
     def addTopics() {
-        Topics t = Topics.findByName(params.topicName)
-        List myTopicList = dashboardService.postByMe(session.name)
-        boolean var = myTopicList.contains(t)
-        if(var){
-            flash.message3 = "Topic Exists"
-            redirect(controller: 'dashboard', action: 'dashboard')
-        }
-        else{
-            String email = session.name
-            topicsService.addTopicMethod(params, email)
-            redirect(controller: "dashboard", action: "dashboard")
+        if (!session.name) {
+            redirectToHome()
+        } else {
+            Topics t = Topics.findByName(params.topicName)
+            List myTopicList = dashboardService.postByMe(session.name)
+            boolean var = myTopicList.contains(t)
+            if (var) {
+                flash.message3 = "Topic Exists"
+                redirect(controller: 'dashboard', action: 'dashboard')
+            } else {
+                String email = session.name
+                topicsService.addTopicMethod(params, email)
+                redirect(controller: "dashboard", action: "dashboard")
+            }
         }
     }
 
-    def topicShow(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
+    def topicShow() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
             List topicList = topicsService.showListMethod()
             render(view: 'AllTopicsList', model: [topiclist: topicList])
         }
     }
 
-    def deleteTopics(){
-        if(!session.name){
-            flash.message = "Login First!!!"
-            redirect url:'/'
-        }else {
+    def deleteTopics() {
+        if (!session.name) {
+            redirectToHome()
+        } else {
             List topicList1 = topicsService.deletePost(params)
             redirect(action: "topicShow")
         }
@@ -45,8 +46,7 @@ class TopicsController {
 
     def viewTopics() {
         if (!session.name) {
-            flash.message = "Login First!!!"
-            redirect url:'/'
+            redirectToHome()
         } else {
             Users user = Users.findByEmail(session.name)
             Users user1 = Users.findByEmail(session.name)
@@ -77,16 +77,13 @@ class TopicsController {
                 eq("topic.id", tid)
             }
             render(view: "ShowTopics",
-                    model: [user             : user, subs: sub,
-                            subscount        : subscount,
-                            postcount        : postcount,
-                            subscription     : subscription,
-                            subscriptions    : subscriptionLt,
-                            subscriptioncount: subscriptioncount,
-                            postscount       : postscount,
-                            resources        : resource,
-                            userdata         : user1,
-                            subscriptions    : subscriptionLt])
+                    model: [user      : user, subs: sub, subscount: subscount, postcount: postcount, subscription: subscription, subscriptions: subscriptionLt, subscriptioncount: subscriptioncount,
+                            postscount: postscount, resources: resource, userdata: user1, subscriptions: subscriptionLt])
         }
+    }
+
+    def redirectToHome() {
+        flash.message = "Login First!!!"
+        redirect url: '/'
     }
 }

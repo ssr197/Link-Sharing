@@ -16,17 +16,17 @@ class Users {
 
     //relation to table ReadingItem and table ResourceRating
     static hasMany =
-            [subscribedTo:Subscription,
-             topic:Topics,
-             resource:Resources,
-             readItem:ReadingItem,
-             resourceRated:ResourcesRating]
+            [subscribedTo : Subscription,
+             topic        : Topics,
+             resource     : Resources,
+             readItem     : ReadingItem,
+             resourceRated: ResourcesRating]
 
 
     //setting the constraints
     static constraints = {
-        email(unique:true, email:true)
-        username(unique:true)
+        email(unique: true, email: true)
+        username(unique: true)
         password blank: false, nullable: false, minSize: 1, maxSize: 64
         photo nullable: true
     }

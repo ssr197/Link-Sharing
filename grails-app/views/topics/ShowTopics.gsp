@@ -16,7 +16,7 @@
     </script>
     <style>
     body{
-        background: #555555;
+        background: #b2b2b2;
     }
     </style>
     <script>
@@ -86,13 +86,14 @@
                                             <li class="dropdown-content">
                                                 <li><a href="/users/openPageToChangeProfile">profile</a></li>
                                                 <li><a href="/users/showList">Users</a></li>
-                                                <li><a href="/topics/topicShow">Topic</a></li>
+                                                <li><a href="/resources/showPostList">posts</a></li>
                                                 <li><a href="/users/logout">Logout</a></li>
                                             </div>
                                         </g:if>
                                         <g:else>
                                             <li class="dropdown-content">
                                                 <li><a href="/users/openPageToChangeProfile">profile</a></li>
+                                                <li><a href="/resources/showPostList">posts</a></li>
                                                 <li><a href="/users/logout">Logout</a></li>
                                             </div>
                                         </g:else>

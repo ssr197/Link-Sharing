@@ -6,7 +6,16 @@ class ResourcesRatingController {
     def resourcesRatingService
 
     def saveRating() {
-        resourcesRatingService.saveRatingForUser(params)
-        render ([success: true] as JSON)
+        if (!session.name) {
+            redirectToHome()
+        } else {
+            resourcesRatingService.saveRatingForUser(params)
+            render([success: true] as JSON)
+        }
+    }
+
+    def redirectToHome() {
+        flash.message = "Login First!!!"
+        redirect url: '/'
     }
 }

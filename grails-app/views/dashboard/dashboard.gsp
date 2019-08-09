@@ -5,7 +5,8 @@
 
         <style>
             body{
-                background: #5D5C61;
+                background: #b2b2b2;
+                /*background: #5D5C61;*/
             }
         </style>
         <title>Home Page</title>
@@ -107,12 +108,14 @@
                                                     <a href="/users/openPageToChangeProfile">profile</a>
                                                     <a href="/users/showUserList">Users</a>
                                                     <a href="/topics/topicShow">topic</a>
+                                                    <a href="/resources/showPostList">posts</a>
                                                     <a href="/users/logout">Logout</a>
                                                 </div>
                                             </g:if>
                                             <g:else>
                                                 <div class="dropdown-content">
                                                     <a href="/users/openPageToChangeProfile">profile</a>
+                                                    <a href="/resources/showPostList">posts</a>
                                                     <a href="/users/logout">Logout</a>
                                                 </div>
                                             </g:else>
@@ -221,10 +224,10 @@
                                         <div class="panel-body">
                                             <div class="card-horizontal">
                                                 <g:each in="${trending}" var="us" status="i">
-                                                    %{--<li>--}%
                                                         <div class="row">
                                                             <div class="col-md-4">
-                                                                <img src="{us.createdBy.photo}"/></div>
+                                                                <asset:image src="${us.createdBy.photo}" alt="photo here" style="width:70px;height:70px"/>
+                                                            </div>
                                                             <div class="col-sm-8">
                                                                 <div style="font-size:23px;"><b>${us.name}</b></div>
                                                                 <div>
@@ -248,7 +251,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    %{--</li>--}%
                                                 </g:each>
                                             </div>
                                         </div>
@@ -292,7 +294,6 @@
                                                 <td width="250px" style="color: #761c19">
                                                     <div>
                                                         <g:link controller="dashboard" action="markAsRead" params="[identifier:res.id, email:session.name]">Mark as read</g:link>
-                                                        %{--<g:link controller="dashboard" action="markAsRead" params="[identifier:res.id, email:res.createdBy.email]">Mark as read</g:link>--}%
                                                     </div>
                                                 </td>
                                                 <td width="250px" style="color: #2b542c;">
@@ -324,7 +325,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-2 control-label">Email</div>
                                         <div class="col-sm-10">
-                                            <input type="email" name="email" placeholder="Enter email" class="form-control col-sm-8" />
+                                            <input type="email" name="email" required placeholder="Enter email" class="form-control col-sm-8" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -343,34 +344,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                %{--<div class="modal fade" id="invite" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Send Invite To</h4>
-                            </div>
-                            <div class="modal-body">
-                                <g:form class="topicForm" controller="sendingLink" action="sendInvite">
-                                    Email *:
-                                    <input class="form-control" type="text" name="sendEmail"/>
-                                    topic *:
-                                    <br>
-                                    <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
-                                    <br><br>
-                                    <br><br>
-                                    <input type="submit" class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                                </g:form>
-                            </div>
-                            <div class="modal-footer" style=" margin-top: 15px;">
-                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>--}%
-
                 %{--Upload Link--}%
                 <div class="modal fade"  id="uploadLink" role="dialog">
                     <div class="modal-dialog">
@@ -383,10 +356,10 @@
                             <div class="modal-body">
                                 <g:uploadForm  controller="resources" action="saveLink" class="topicForm">
                                     Link *:
-                                    <input type="text" class="form-control" id="linkres" placeholder="Link" name="linkres">
+                                    <input type="url" class="form-control" required id="linkres" placeholder="Link" name="linkres">
                                     <br>
                                     Description *:
-                                    <textarea class="form-control" id="selectlink" name="selectlink"></textarea>
+                                    <textarea class="form-control" required id="selectlink" name="selectlink"></textarea>
                                     <br>
                                     <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topic" from="${subscriptions.topic.name}"  optionValue="value" />
                                     <br><br>
@@ -401,35 +374,35 @@
                 </div>
             </div>
        %{--Upload Document--}%
-                <div class="modal fade"  id="uploadDocument" role="dialog">
-                    <div class="modal-dialog">
-                        <!-- Upload Document content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Share Document</h4>
-                            </div>
-                            <div class="modal-body">
-                                <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">
-                                    Document *:
-                                    <input type="file" class="form-control" id="doc" placeholder="choose" name="document">
-                                    <br>
-                                    Description *:
-                                    <textarea class="form-control" id="select" name="select"></textarea>
-                                    <br>
-                                    <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topics" from="${subscriptions.topic.name}"  optionValue="value" />
-                                    <br><br>
-                                    <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
-                                </g:uploadForm>
-                            </div>
-                            <div class="modal-footer" style=" margin-top: 15px;">
-                                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                            </div>
+            <div class="modal fade"  id="uploadDocument" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Upload Document content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Share Document</h4>
+                        </div>
+                        <div class="modal-body">
+                            <g:uploadForm  class="form-horizontal" controller="Resources" action="saveDocument" name="documentcreate" enctype="multipart/form-data">
+                                Document *:
+                                <input type="file" class="form-control" required id="doc" placeholder="choose" name="document">
+                                <br>
+                                Description *:
+                                <textarea class="form-control" required id="select" name="select"></textarea>
+                                <br>
+                                <g:select class="btn dropdown-toggle col-sm-8 form-control" name="topics" from="${subscriptions.topic.name}"  optionValue="value" />
+                                <br><br>
+                                <input type="submit" value="share"   class="btn btn-success" style="float: right; margin-top: 5px;"/>
+                            </g:uploadForm>
+                        </div>
+                        <div class="modal-footer" style=" margin-top: 15px;">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
+        </div>
         <!-- create topic-->
                         <div class="modal fade" id="topicModal" role="dialog">
                             <div class="modal-dialog">
@@ -442,7 +415,7 @@
                                     <div class="modal-body">
                                         <g:form controller="topics" action="addTopics" class="topicForm">
                                             Name *:
-                                            <input class="form-control" type="text" name="topicName"/>
+                                            <input class="form-control" required type="text" name="topicName"/>
                                             Visibility *:
                                             <select class="form-control" name="selection">
                                                 <option>PUBLIC</option>
